@@ -58,4 +58,7 @@
     .product-display {
         margin-left: 0;
     }
+    .product-card {
+        justify-self: center;
+    }
 }
