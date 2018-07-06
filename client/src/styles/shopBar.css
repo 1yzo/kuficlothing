@@ -25,3 +25,9 @@
 .category-label--active {
     color: #c6af40;
 }
+
+@media (max-width: 611px) {
+    .shop-bar {
+        display: none;
+    }
+}

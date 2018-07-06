@@ -5,9 +5,19 @@
 
 .product-holder {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns:  repeat(auto-fill, minmax(225px, 1fr));
     gap: 5rem;
 }
+
+/* // 3-per-row-version
+.product-holder {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 20rem;
+	row-gap: 8rem;
+} */
 
 .product-card {
     position: relative;
@@ -42,4 +52,10 @@
 
 .overlay > div {
     margin-bottom: 0.5rem;
+}
+
+@media (max-width: 611px) {
+    .product-display {
+        margin-left: 0;
+    }
 }
