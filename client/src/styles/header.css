@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 10vh;
+    height: 5rem;
     position: fixed;
     width: 100%;
     padding: 1rem 0;
@@ -20,14 +20,11 @@ h1 {
     width: 73px;
 }
 
-a {
+.header__link {
+    margin-right: 2rem;
     text-decoration: none;
     color: #202237;
     font-weight: 700;
-}
-
-.header__link {
-    margin-right: 2rem;
 }
 
 .active-link {

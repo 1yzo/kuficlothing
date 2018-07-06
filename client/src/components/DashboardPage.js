@@ -6,7 +6,7 @@ import '../styles/pages.css';
 class DashboardPage extends React.Component {
     render() {
         return (
-            <div className="page">
+            <div>
                 <div className="main-media"></div>
                 
             </div>

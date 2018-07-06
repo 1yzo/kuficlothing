@@ -1,0 +1,7 @@
+.product-display {
+    padding: 4rem 0;
+}
+
+.product-holder {
+    display: grid;
+}
