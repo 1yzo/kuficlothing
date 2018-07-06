@@ -1,0 +1,10 @@
+.page {
+    padding-top: 13.5vh;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.page--shop {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}

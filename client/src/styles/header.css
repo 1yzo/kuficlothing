@@ -1,0 +1,39 @@
+.header {
+    /* padding: 0 5rem; */
+    background: white;
+    box-shadow: 0 2px 5px rgba(78,76,80,.185);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+h1 {
+    color: #202237; 
+}
+
+.logo {
+    height: 66px;
+    width: 73px;
+}
+
+a {
+    text-decoration: none;
+    color: #202237;
+    font-weight: 700;
+}
+
+.header__link {
+    margin-right: 2rem;
+}
+
+.active-link {
+    color: #c6af40;
+}
+
+.padding-holder {
+    flex-basis: 5rem;
+}
