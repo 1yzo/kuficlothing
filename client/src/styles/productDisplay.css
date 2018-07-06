@@ -1,7 +1,45 @@
 .product-display {
     padding: 4rem 0;
+    margin-left: 296px;
 }
 
 .product-holder {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 228px;
+    height: 303px;
+    /* box-shadow: 0px 0px 5px rgba(78, 76, 80, 0.185); */
+}
+
+.product-card:hover .overlay {
+    opacity: 100;
+}
+
+.product-card > img {
+    height: 300px;
+    width: 225px;
+    /* box-shadow: 0 8px 6px -6px black; */
+    box-shadow: 0 20px 50px rgba(48, 48, 46, 0.726);
+}
+
+.overlay {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    transition: opacity 200ms ease-in-out;
+}
+
+.overlay > div {
+    margin-bottom: 0.5rem;
 }

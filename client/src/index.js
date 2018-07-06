@@ -17,6 +17,35 @@ store.dispatch(setProducts([
         image: '/images/placeholder.JPG'
     },
     {
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },{
+        name: 'mukhtalif tee',
+        category: 'tops',
+        image: '/images/placeholder.JPG'
+    },
+    {
         name: 'another tee',
         category: 'tops',
         image: '/images/placeholder.JPG'

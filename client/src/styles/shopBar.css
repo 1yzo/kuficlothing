@@ -2,6 +2,9 @@
     padding: 4rem 0;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    left: 5rem;
+    top: 7rem;
 }
 
 .shop-bar__title {
