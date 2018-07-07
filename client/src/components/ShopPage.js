@@ -4,11 +4,19 @@ import '../styles/pages.css';
 import ShopBar from './ShopBar';
 import ProductDisplay from './ProductDisplay';
 
-const ShopPage = () => (
-    <div className="page page--shop">
-        <ShopBar />
-        <Route path="/shop/:shopCategory" component={ProductDisplay} />
-    </div>
-);
+class ShopPage extends React.Component {
+    componentDidMount() {
+        this.props.history.push('/shop/all')
+    }
+    
+    render() {
+        return (
+            <div className="page page--shop">
+                <ShopBar />
+                <Route path="/shop/:shopCategory" component={ProductDisplay} />
+            </div>
+        );
+    }
+}
 
 export default ShopPage;
