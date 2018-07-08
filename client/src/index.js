@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import registerServiceWorker from './registerServiceWorker';
 import 'normalize.css/normalize.css';
 import './styles/base.css';
@@ -8,7 +9,8 @@ import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { setProducts } from './actions/products';
 
-const store = configureStore();
+const store = configureStore().store;
+const persistor = configureStore().persistor;
 
 store.dispatch(setProducts([
     {
@@ -263,11 +265,14 @@ store.dispatch(setProducts([
             xLarge: false
         }
     }
-]))
+]));
+
 
 const jsx = (
     <Provider store={store}>
-        <AppRouter />
+        <PersistGate loading={null} persistor={persistor}>
+            <AppRouter />
+        </PersistGate>
     </Provider>
 );
 
