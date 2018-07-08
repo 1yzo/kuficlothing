@@ -98,7 +98,7 @@ store.dispatch(setProducts([
     {
         name: 'Sabr and Shukr Windbreaker (Black)',
         category: 'outerwear',
-        image: '/images/IMG_5846.JPG',
+        image: '/images/IMG_5846.jpg',
         price: 3500,
         stock: {
             small: false,
@@ -122,7 +122,7 @@ store.dispatch(setProducts([
     {
         name: "insha'Allah Dad Hat (White)",
         category: 'accessories',
-        image: '/images/IMG_4594.jpg',
+        image: '/images/IMG_4594.JPG',
         price: 1500,
         stock: {
             small: false,
