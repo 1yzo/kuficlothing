@@ -14,7 +14,9 @@ const Header = (props) => {
                 <NavLink className="logo__link" to="/">
                     <img className="logo" src="/images/logo.PNG" alt="Kufi Clothing logo"/>
                 </NavLink>
-                <i className="material-icons">shopping_cart</i>
+                <NavLink className="header__link" activeClassName="active-link" to="/cart">
+                    <i className="material-icons">shopping_cart</i>
+                </NavLink>
             </div>
             <div className="padding-holder" />
         </div>
