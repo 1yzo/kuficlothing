@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import 'normalize.css/normalize.css';
 import './styles/base.css';
 import AppRouter from './routers/AppRouter';
@@ -24,4 +24,4 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
