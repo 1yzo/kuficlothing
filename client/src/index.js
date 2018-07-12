@@ -7,10 +7,13 @@ import './styles/base.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { startAddProduct } from './actions/products';
+import { startSetProducts } from './actions/products';
 
 const store = configureStore().store;
 const persistor = configureStore().persistor;
+// REMEMBER TO CHANGE THE FIREBASE API KEYS BEFORE PRODUCTION
+
+store.dispatch(startSetProducts());
 
 const jsx = (
     <Provider store={store}>
