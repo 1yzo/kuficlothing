@@ -8,6 +8,17 @@ export default (state = defaultProductsReducer, action) => {
             return [...state, ...action.products];
         case 'REMOVE_PRODUCT':
             return state.filter((product) => product.id !== action.id);
+        case 'EDIT_PRODUCT':
+            return state.map((product) => {
+                if (product.id === action.id) {
+                    return {
+                        ...product,
+                        ...action.edits
+                    }; 
+                } else {
+                    return product;
+                }
+            });
         default:
             return state;
     }

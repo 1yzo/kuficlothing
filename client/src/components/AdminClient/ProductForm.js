@@ -4,18 +4,18 @@ import { startAddProduct } from '../../actions/products';
 
 class ProductForm extends React.Component {
     state = {
-        name: '',
-        category: '',
-        image: '',
-        price: '',
+        name: this.props.product ? this.props.product.name : '',
+        category: this.props.product ? this.props.product.category : '',
+        image: this.props.product ? this.props.product.image : '',
+        price: this.props.product ? this.props.product.price.toString() : '',
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: this.props.product ? this.props.product.stock.small : 0,
+            medium: this.props.product ? this.props.product.stock.medium : 0,
+            large: this.props.product ? this.props.product.stock.large : 0,
+            xLarge: this.props.product ? this.props.product.stock.xLarge : 0
         }
     };
-
+    
     onChange = (e) => {
         const value = e.target.value;
         const field = e.target.id;
@@ -52,10 +52,18 @@ class ProductForm extends React.Component {
     
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.dispatch(startAddProduct({
-            ...this.state,
-            price: Number(this.state.price) * 100
-        }));
+        if (this.props.product) {
+            this.props.onSubmit(this.props.product.id, {
+                ...this.state,
+                price: Number(this.state.price) * 100
+            });
+        } else {
+            this.props.onSubmit({
+                ...this.state,
+                price: Number(this.state.price) * 100
+            })
+        }
+        this.props.closeForm();
     }
     
     render() {
@@ -68,8 +76,8 @@ class ProductForm extends React.Component {
                     </div>
                     <div>
                         <label htmlFor="category">Category:</label>
-                        <select id="category" onChange={this.onChange}>
-                            <option value="" defaultValue>Choose one</option>
+                        <select id="category" onChange={this.onChange} value={this.state.category}>
+                            <option value="">Choose one</option>
                             <option value="tops">Tops</option>
                             <option value="bottoms">Bottoms</option>
                             <option value="outerwear">Outerwear</option>
@@ -96,9 +104,16 @@ class ProductForm extends React.Component {
                         <input type="number" id="xLarge" value={this.state.stock.xLarge} onChange={this.onStockChange}/> 
                     </div>
                     <div>
-                        <input type="file" onChange={this.onFileChange}/>
+                        <label>Main Pic:</label>
+                        <input type="file" onChange={this.onFileChange} />
                     </div>
-                    <button>Add Product</button>
+                    <button 
+                        onClick={this.handleSubmit} 
+                        disabled={!(this.state.name && this.state.category && this.state.image && this.state.price)}
+                    >
+                        Accept
+                    </button>
+                    <button onClick={this.props.closeForm}>Cancel</button>
                 </form>
             </div>
         );

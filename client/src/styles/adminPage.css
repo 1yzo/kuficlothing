@@ -2,10 +2,39 @@ label {
     margin: 1rem;
 }
 
-.productListing {
+.product-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-list > input {
+    width: 39.7rem;
+    font-size: 2rem;
+}
+
+.product-listing {
     display: flex;
     justify-content: space-between;
     width: 40rem;   
     background: #eee;
-    margin: 1rem 0;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.product-listing h4 {
+    margin-left: 1rem;
+}
+
+.product-listing:hover {
+    background: rgb(214, 211, 211);
+}
+
+.product-listing button {
+    border: none;
+    background: rgba(230, 49, 49, 0.582);
+}
+
+.product-listing button:hover {
+    background: rgb(230, 49, 49);
 }

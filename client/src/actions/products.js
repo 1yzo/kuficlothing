@@ -27,8 +27,11 @@ export const addProduct = (product) => ({
 
 export const startAddProduct = (product) => {
     return (dispatch) => {
-        return database.ref('products').push(product).then(() => {
-            dispatch(addProduct(product));
+        return database.ref('products').push(product).then((ref) => {
+            dispatch(addProduct({
+                ...product,
+                id: ref.key
+            }));
         });
     }
 };
@@ -43,5 +46,19 @@ export const startRemoveProduct = (id) => {
         return database.ref(`products/${id}`).set(null).then(() => {
             dispatch(removeProduct(id));
         })
+    }
+}
+
+export const editProduct = (id, edits) => ({
+    type: 'EDIT_PRODUCT',
+    id,
+    edits
+});
+
+export const startEditProduct = (id, edits) => {
+    return (dispatch) => {
+        return database.ref(`products/${id}`).update(edits).then(() => {
+            dispatch(editProduct(id, edits));
+        });
     }
 }
