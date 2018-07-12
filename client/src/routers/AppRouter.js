@@ -5,7 +5,7 @@ import ShopPage from '../components/ShopPage';
 import Header from '../components/Header';
 import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCart from '../components/ShoppingCart';
-import AdminPage from '../components/AdminPage';
+import AdminPage from '../components/AdminClient/AdminPage';
 
 const AppRouter = () => (
     <BrowserRouter>

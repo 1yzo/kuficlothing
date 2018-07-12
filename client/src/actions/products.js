@@ -32,3 +32,16 @@ export const startAddProduct = (product) => {
         });
     }
 };
+
+export const removeProduct = (id) => ({
+    type: 'REMOVE_PRODUCT',
+    id
+});
+
+export const startRemoveProduct = (id) => {
+    return (dispatch) => {
+        return database.ref(`products/${id}`).set(null).then(() => {
+            dispatch(removeProduct(id));
+        })
+    }
+}

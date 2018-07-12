@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleAdmin } from '../actions/config';
-import { startAddProduct } from '../actions/products';
-import '../styles/adminPage.css';
+import { startAddProduct } from '../../actions/products';
 
-class AdminPage extends React.Component {
+class ProductForm extends React.Component {
     state = {
         name: '',
         category: '',
@@ -17,14 +15,6 @@ class AdminPage extends React.Component {
             xLarge: 0
         }
     };
-    
-    componentDidMount() {
-        this.props.dispatch(toggleAdmin(true));
-    }
-
-    componentWillUnmount() {
-        this.props.dispatch(toggleAdmin(false));
-    }
 
     onChange = (e) => {
         const value = e.target.value;
@@ -115,4 +105,4 @@ class AdminPage extends React.Component {
     }
 }
 
-export default connect()(AdminPage);
+export default connect()(ProductForm);
