@@ -8,7 +8,7 @@ class ShoppingCart extends React.Component {
             <div className="page">
                 {Object.values(this.props.items).map((item, i) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <h2>{item.name}: {item.count}</h2>
                             <button onClick={() => this.props.dispatch(removeItem(item))}>x</button>
                         </div>

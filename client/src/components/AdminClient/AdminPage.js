@@ -4,7 +4,6 @@ import { toggleAdmin } from '../../actions/config';
 import '../../styles/adminPage.css';
 import ProductForm from './ProductForm';
 import ProductList from './ProductList';
-import database from '../../firebase/firebase';
 import { startAddProduct, startEditProduct } from '../../actions/products';
 
 class AdminPage extends React.Component {
