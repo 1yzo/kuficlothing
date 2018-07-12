@@ -5,6 +5,7 @@ import ShopPage from '../components/ShopPage';
 import Header from '../components/Header';
 import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCart from '../components/ShoppingCart';
+import AdminPage from '../components/AdminPage';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -15,6 +16,7 @@ const AppRouter = () => (
                 <Route path="/shop" component={ShopPage} />
                 <Route path="/products/:productName" component={ProductInfoPage} />
                 <Route path="/cart" component={ShoppingCart} />
+                <Route path="/admin" component={AdminPage} />
             </Switch>
         </div>
     </BrowserRouter>

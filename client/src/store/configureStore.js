@@ -4,12 +4,14 @@ import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import productsReducer from '../reducers/products';
 import cartReducer from '../reducers/cart';
+import configReducer from '../reducers/config';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     products: productsReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    config: configReducer
 });
 
 const persistConfig = {
