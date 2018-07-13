@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import ShopPage from '../components/ShopPage';
@@ -8,10 +8,8 @@ import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCart from '../components/ShoppingCart';
 import AdminPage from '../components/AdminClient/AdminPage';
 
-export const history = createHistory();
-
 const AppRouter = () => (
-    <Router history={history}>
+    <HashRouter >
         <div>
             <Header />
             <Switch>
@@ -22,7 +20,7 @@ const AppRouter = () => (
                 <Route path="/admin" component={AdminPage} />
             </Switch>
         </div>
-    </Router>
+    </HashRouter>
 );
 
 export default AppRouter;
