@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import ShopPage from '../components/ShopPage';
 import Header from '../components/Header';
@@ -7,8 +8,10 @@ import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCart from '../components/ShoppingCart';
 import AdminPage from '../components/AdminClient/AdminPage';
 
+export const history = createHistory();
+
 const AppRouter = () => (
-    <BrowserRouter>
+    <Router history={history}>
         <div>
             <Header />
             <Switch>
@@ -19,7 +22,7 @@ const AppRouter = () => (
                 <Route path="/admin" component={AdminPage} />
             </Switch>
         </div>
-    </BrowserRouter>
+    </Router>
 );
 
 export default AppRouter;
