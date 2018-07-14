@@ -10,7 +10,7 @@ const Header = (props) => {
                 <div className="padding-holder" />
                 <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display:'flex' }}>
-                        <NavLink className="header__link" to="/shop" activeClassName="active-link">SHOP</NavLink>
+                        <NavLink className="header__link" to="/shop/all" activeClassName="active-link" exact>SHOP</NavLink>
                         <NavLink className="header__link" to="/mission" activeClassName="active-link" >MISSION</NavLink>
                     </div>
                     <NavLink className="logo__link" to="/">

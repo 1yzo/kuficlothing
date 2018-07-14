@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCart from '../components/ShoppingCart';
 import AdminPage from '../components/AdminClient/AdminPage';
+import NotFoundPage from './NotFoundPage';
 
 const AppRouter = () => (
     <HashRouter >
@@ -18,6 +19,7 @@ const AppRouter = () => (
                 <Route path="/products/:productName" component={ProductInfoPage} />
                 <Route path="/cart" component={ShoppingCart} />
                 <Route path="/admin" component={AdminPage} />
+                <Route component={NotFoundPage} />
             </Switch>
         </div>
     </HashRouter>

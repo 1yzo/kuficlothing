@@ -6,6 +6,7 @@ class ProductForm extends React.Component {
     state = {
         name: this.props.product ? this.props.product.name : '',
         category: this.props.product ? this.props.product.category : '',
+        subcategory: this.props.product ? this.props.product.subcategory : ['none'],
         image: this.props.product ? this.props.product.image : '',
         price: this.props.product ? this.props.product.price.toString() : '',
         stock: {
@@ -49,6 +50,15 @@ class ProductForm extends React.Component {
         }
         reader.readAsDataURL(file);
     }
+
+    onSubcategoryChange = (e) => {
+        const category = e.target.value;
+        if (this.state.subcategory.includes(category)) {
+            this.setState((prevState) => ({ subcategory: prevState.subcategory.filter((i) => i !== category) }));
+        } else {
+            this.setState((prevState) => ({ subcategory: prevState.subcategory.concat(category) }));
+        }
+    }
     
     handleSubmit = (e) => {
         e.preventDefault();
@@ -83,6 +93,17 @@ class ProductForm extends React.Component {
                             <option value="outerwear">Outerwear</option>
                             <option value="accessories">Accessories</option>
                         </select>
+                    </div>
+                    <div>
+                        <label>Subcategory:</label>
+                        <input 
+                            type="checkbox" 
+                            id="ft" 
+                            value="featured" 
+                            checked={this.state.subcategory.includes('featured')}
+                            onChange={this.onSubcategoryChange}
+                        />
+                        <label htmlFor="ft">Featured</label>
                     </div>
                     <div>
                         <label htmlFor="price">Price:</label>

@@ -6,7 +6,7 @@ import ProductDisplay from './ProductDisplay';
 
 class ShopPage extends React.Component {
     componentDidMount() {
-        this.props.history.push('/shop/all')
+        // this.props.history.push('/shop/all')
     }
     
     render() {

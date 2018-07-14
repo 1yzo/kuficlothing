@@ -13,7 +13,7 @@ class ProductDisplay extends React.Component {
                             if (this.props.match.params.shopCategory === 'all') {
                                 return true;
                             } else {
-                                return product.category === this.props.match.params.shopCategory;
+                                return product.category.includes(this.props.match.params.shopCategory);
                             }
                         }).map((product, i) => <ProductCard key={i} {...product} />)
                     }
