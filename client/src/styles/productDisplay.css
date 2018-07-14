@@ -19,6 +19,11 @@
 	row-gap: 8rem;
 } */
 
+.card-holder {
+    display: flex;
+    justify-content: center;
+}
+
 .product-card {
     position: relative;
     display: flex;
