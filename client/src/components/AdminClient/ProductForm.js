@@ -8,7 +8,7 @@ class ProductForm extends React.Component {
         category: this.props.product ? this.props.product.category : '',
         subcategory: this.props.product ? this.props.product.subcategory : ['none'],
         image: this.props.product ? this.props.product.image : '',
-        extraPics: this.props.product ? this.props.product.extraPics : [],
+        extraPics: this.props.product ? this.props.product.extraPics : ['none'],
         price: this.props.product ? this.props.product.price.toString() : '',
         stock: {
             small: this.props.product ? this.props.product.stock.small : 0,
@@ -70,6 +70,11 @@ class ProductForm extends React.Component {
         } else {
             this.setState((prevState) => ({ subcategory: prevState.subcategory.concat(category) }));
         }
+    }
+
+    removePic = (e) => {
+        const src = e.target.attributes.src.value;
+        this.setState((prevState) => ({ extraPics: prevState.extraPics.filter((pic) => pic !== src) }));
     }
     
     handleSubmit = (e) => {
@@ -146,8 +151,21 @@ class ProductForm extends React.Component {
                         <input type="file" onChange={this.onExtraPicsChange} multiple/>
                     </div>
                     <div>
-                    {this.state.extraPics.length > 0 &&
-                        this.state.extraPics.map((pic, i) => <img key={i} className="image-preview" src={pic} alt="pic" />)}
+                    {this.state.extraPics.length > 1 &&
+                        <div>
+                            <div style={{ marginLeft: '1rem', color: 'red'}}>Click a pic to remove it</div>
+                            {this.state.extraPics.slice(1).map((pic, i) => (
+                                <img 
+                                    key={i} 
+                                    onClick={this.removePic} 
+                                    className="image-preview" 
+                                    src={pic} 
+                                    alt="pic"
+                                    index={i}
+                                />)
+                            )}
+                        </div>
+                    }
                     </div>
                     <button 
                         onClick={this.handleSubmit} 
