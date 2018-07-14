@@ -8,6 +8,7 @@ class ProductForm extends React.Component {
         category: this.props.product ? this.props.product.category : '',
         subcategory: this.props.product ? this.props.product.subcategory : ['none'],
         image: this.props.product ? this.props.product.image : '',
+        extraPics: this.props.product ? this.props.product.extraPics : [],
         price: this.props.product ? this.props.product.price.toString() : '',
         stock: {
             small: this.props.product ? this.props.product.stock.small : 0,
@@ -42,13 +43,24 @@ class ProductForm extends React.Component {
         this.setState(() => ({ stock: temp }));
     }
 
-    onFileChange = (e) => {
+    onMainPicChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
             this.setState(() => ({ image: reader.result }));
         }
         reader.readAsDataURL(file);
+    }
+
+    onExtraPicsChange = (e) => {
+        const files = e.target.files;
+        for (let i of files) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                this.setState((prevState) => ({ extraPics: prevState.extraPics.concat(reader.result) }));
+            }
+            reader.readAsDataURL(i);
+        }
     }
 
     onSubcategoryChange = (e) => {
@@ -126,7 +138,16 @@ class ProductForm extends React.Component {
                     </div>
                     <div>
                         <label>Main Pic:</label>
-                        <input type="file" onChange={this.onFileChange} />
+                        <input type="file" onChange={this.onMainPicChange} />
+                    </div>
+                    {this.state.image && <img className="image-preview" src={this.state.image} alt="pic" />}
+                    <div>
+                        <label>Extra Pics:</label>
+                        <input type="file" onChange={this.onExtraPicsChange} multiple/>
+                    </div>
+                    <div>
+                    {this.state.extraPics.length > 0 &&
+                        this.state.extraPics.map((pic, i) => <img key={i} className="image-preview" src={pic} alt="pic" />)}
                     </div>
                     <button 
                         onClick={this.handleSubmit} 

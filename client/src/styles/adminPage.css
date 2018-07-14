@@ -38,3 +38,9 @@ label {
 .product-listing button:hover {
     background: rgb(230, 49, 49);
 }
+
+.image-preview {
+    margin-left: 1rem;
+    height: 100px;
+    width: 100px;
+}
