@@ -1,14 +1,16 @@
-store.dispatch(setProducts([
+const entries = [
     {
         name: 'Mukhtalif Long Sleeve Tee (Olive)',
         category: 'tops',
         image: '/images/placeholder.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -16,23 +18,27 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_8037.JPG',
         price: 3500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
         name: 'Sindhi Ajrak Long Sleeve Tee (Tan)',
-        cateogory: 'tops',
+        category: 'tops',
         image: '/images/IMG_8046.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -40,11 +46,13 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_8039.JPG',
         price: 3500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -52,11 +60,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_8208.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -64,11 +74,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_8041.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -76,11 +88,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_8044.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: true,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -88,11 +102,13 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_5846.jpg',
         price: 3500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -100,11 +116,13 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_5845.JPG',
         price: 3500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -112,11 +130,13 @@ store.dispatch(setProducts([
         category: 'accessories',
         image: '/images/IMG_4594.JPG',
         price: 1500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -124,11 +144,13 @@ store.dispatch(setProducts([
         category: 'accessories',
         image: '/images/IMG_9087.JPG.jpeg',
         price: 1500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -136,11 +158,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_4592.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -148,11 +172,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_9091.JPG.jpeg',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -160,11 +186,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_4566-1.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -172,11 +200,13 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_0380.JPG',
         price: 3500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -184,11 +214,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_0526.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -196,11 +228,13 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_0435.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: false,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -208,11 +242,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_6966.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -220,11 +256,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_0730.JPG',
         price: 1500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: false,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -232,11 +270,13 @@ store.dispatch(setProducts([
         category: 'tops',
         image: '/images/IMG_0709.JPG',
         price: 1500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: true,
-            medium: false,
-            large: true,
-            xLarge: true
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     },
     {
@@ -244,11 +284,42 @@ store.dispatch(setProducts([
         category: 'outerwear',
         image: '/images/IMG_0529.JPG',
         price: 2500,
+        extraPics: ['none'],
+        subcategory: ['none'],
         stock: {
-            small: false,
-            medium: false,
-            large: false,
-            xLarge: false
+            small: 0,
+            medium: 0,
+            large: 0,
+            xLarge: 0
         }
     }
-]));
+];
+
+function toDataURL(src, callback) {
+    var image = new Image();
+    image.crossOrigin = 'Anonymous';
+ 
+    image.onload = function() {
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        canvas.height = this.naturalHeight;
+        canvas.width = this.naturalWidth;
+        context.drawImage(this, 0, 0);
+        var dataURL = canvas.toDataURL('image/jpeg');
+        callback(dataURL);
+    };
+
+    image.src = src;
+}
+
+
+for (let i = 0; i < entries.length; i++) {
+    const { image, ...rest } = entries[i];
+    toDataURL(image, (dataUrl) => {
+        const product = {
+            ...rest,
+            image: dataUrl
+        }
+        store.dispatch(startAddProduct(product));
+    });
+}

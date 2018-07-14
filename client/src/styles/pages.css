@@ -4,7 +4,8 @@
     padding-right: 5rem;
 }
 
-/* .page--shop {
+.page--product-info-page {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-} */
+    grid-template-columns: 4fr 2fr;
+    padding-top: 100px;
+}

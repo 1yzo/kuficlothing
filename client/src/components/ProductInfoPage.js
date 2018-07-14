@@ -11,17 +11,20 @@ class ProductInfoPage extends React.Component {
     render() {
         const { name, image, price, stock } = this.props.product;    
         return(
-            <div className="page">
-
-                <img className="image--big" src={image} alt={name} />
-                <h2>{name}</h2>
-                <div className="size-selection">
-                    <div>Small</div>
-                    <div>Medium</div>
-                    <div>Large</div>
-                    <div>X-Large</div>
+            <div className="page page--product-info-page">
+                <div>
+                    <img className="image--big" src={image} alt={name} />
                 </div>
-                <button onClick={this.handleAddToCart}>Add To Cart</button>
+                    <div>
+                    <h2>{name}</h2>
+                    <div className="size-selection">
+                        <div>Small</div>
+                        <div>Medium</div>
+                        <div>Large</div>
+                        <div>X-Large</div>
+                    </div>
+                    <button onClick={this.handleAddToCart}>Add To Cart</button>
+                </div>
             </div>
         )
     }
