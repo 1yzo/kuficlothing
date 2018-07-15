@@ -6,6 +6,12 @@
 
 .page--product-info-page {
     display: grid;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
     padding-top: 100px;
 }
+
+/* .product-images {
+    display: flex;
+    justify-content: center;
+} */

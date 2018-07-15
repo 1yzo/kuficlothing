@@ -9,7 +9,7 @@ class ProductForm extends React.Component {
         subcategory: this.props.product ? this.props.product.subcategory : ['none'],
         image: this.props.product ? this.props.product.image : '',
         extraPics: this.props.product ? this.props.product.extraPics : ['none'],
-        price: this.props.product ? this.props.product.price.toString() : '',
+        price: this.props.product ? (this.props.product.price / 100).toString() : '',
         stock: {
             small: this.props.product ? this.props.product.stock.small : 0,
             medium: this.props.product ? this.props.product.stock.medium : 0,

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/images.css';
 import '../styles/dashboard.css';
 import '../styles/pages.css';
 

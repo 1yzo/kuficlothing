@@ -27,14 +27,14 @@ class ShopBar extends React.Component {
                 <div style={{ display: 'flex' }}>
                     <div className="category-label" style={{ marginRight: '2rem' }}>Price</div>
                     <i 
-                        className={"material-icons price-dir" + (this.props.priceDir === 'priceLow' ? " price-dir--active" : "")} 
-                        onClick={this.sortPriceLowToHigh}
+                        className={"material-icons price-dir" + (this.props.priceDir === 'priceHigh' ? " price-dir--active" : "")} 
+                        onClick={this.sortPriceHighToLow}
                     >
                         keyboard_arrow_down
                     </i>
                     <i 
-                        className={"material-icons price-dir" + (this.props.priceDir === 'priceHigh' ? " price-dir--active" : "")} 
-                        onClick={this.sortPriceHighToLow}
+                        className={"material-icons price-dir" + (this.props.priceDir === 'priceLow' ? " price-dir--active" : "")} 
+                        onClick={this.sortPriceLowToHigh}
                     >
                         keyboard_arrow_up
                     </i>
