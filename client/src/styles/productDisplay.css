@@ -70,6 +70,16 @@
     margin-bottom: 0.5rem;
 }
 
+.overlay--stock {
+    top: 0;
+    left: 1.4px;
+    font-size: 3rem;
+    background: black;
+    height: 4rem;
+    text-align: center;
+    width: 99%;
+}
+
 @media (max-width: 611px) {
     .product-display {
         margin-left: 0;
