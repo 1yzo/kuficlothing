@@ -26,6 +26,18 @@
     color: #c6af40;
 }
 
+.price-dir {
+    cursor: pointer;
+    height: 20px;
+    color: #202237;
+    margin: 0 0.5rem;
+    transition: color 200ms ease-out;
+}
+
+.price-dir--active {
+    color: #c6af40;
+}
+
 @media (max-width: 611px) {
     .shop-bar {
         display: none;

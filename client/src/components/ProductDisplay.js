@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/productDisplay.css';
 import ProductCard from './ProductCard';
+import sortProducts from '../selectors/products';
 
 class ProductDisplay extends React.Component {
     render() {
@@ -9,13 +10,7 @@ class ProductDisplay extends React.Component {
             <div className="product-display">
                 <div className="product-holder">
                     {
-                        this.props.products.filter((product) => {
-                            if (this.props.match.params.shopCategory === 'all') {
-                                return true;
-                            } else {
-                                return product.category.includes(this.props.match.params.shopCategory);
-                            }
-                        }).map((product, i) => <ProductCard key={i} {...product} />)
+                        this.props.products.map((product, i) => <ProductCard key={i} {...product} />)
                     }
                 </div>
             </div>
@@ -23,8 +18,14 @@ class ProductDisplay extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    products: state.products
+const mapStateToProps = (state, props) => ({
+    products: sortProducts(state.products.filter((product) => {
+        if (props.match.params.shopCategory === 'all') {
+            return true;
+        } else {
+            return product.category.includes(props.match.params.shopCategory);
+        }
+    }), state.filters)
 });
 
 export default connect(mapStateToProps)(ProductDisplay);

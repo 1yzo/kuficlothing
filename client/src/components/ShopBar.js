@@ -1,8 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../styles/shopBar.css';
+import { sortByPrice } from '../actions/filters';
 
 class ShopBar extends React.Component {
+    sortPriceLowToHigh = () => {
+        this.props.dispatch(sortByPrice('priceLow'));
+    }
+
+    sortPriceHighToLow = () => {
+        this.props.dispatch(sortByPrice('priceHigh'));
+    }
+    
     render() {
         return (
             <div className="shop-bar">
@@ -12,9 +22,30 @@ class ShopBar extends React.Component {
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/bottoms">Bottoms</NavLink>
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/outerwear">Outerwear</NavLink>
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/accessories">Accessories</NavLink>
+
+                <div className="shop-bar__title" style={{ marginTop: '3rem', marginBottom: '2rem' }}>SORT</div>
+                <div style={{ display: 'flex' }}>
+                    <div className="category-label" style={{ marginRight: '2rem' }}>Price</div>
+                    <i 
+                        className={"material-icons price-dir" + (this.props.priceDir === 'priceLow' ? " price-dir--active" : "")} 
+                        onClick={this.sortPriceLowToHigh}
+                    >
+                        keyboard_arrow_down
+                    </i>
+                    <i 
+                        className={"material-icons price-dir" + (this.props.priceDir === 'priceHigh' ? " price-dir--active" : "")} 
+                        onClick={this.sortPriceHighToLow}
+                    >
+                        keyboard_arrow_up
+                    </i>
+                </div>
             </div>
         );
     }
 }
 
-export default ShopBar;
+const mapStateToProps = (state) => ({
+    priceDir: state.filters.sortBy
+});
+
+export default connect(mapStateToProps)(ShopBar);
