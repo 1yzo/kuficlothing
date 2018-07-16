@@ -16,6 +16,7 @@ class CartCard extends React.Component {
                 <div className="quantity">
                     <input 
                         type="number"
+                        value={count}
                     />
                 </div>
                 <div className="cart-price">${product.price * count / 100}</div>

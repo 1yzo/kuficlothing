@@ -1,11 +1,11 @@
 .cart-checkout {
     padding: 2rem;
-    background: #545861;
-    border-radius: 15px;
+    background: #40424a;
+    border-radius: 10px;
     box-shadow: 0px 1px 15px rgba(67,38,100,0.15);
     align-self: start;
     height: 80vh;
-    width: 30vw;
+    width: 25vw;
     position: fixed;
     top: 100px;
     right: 50px;

@@ -15,11 +15,12 @@ export default (state = defaultCartState, action) => {
             }
             return { ...state };
         case 'REMOVE_ITEM':
-            state[action.itemName].count--;
-            if (state[action.itemName].count === 0) {
-                delete state[action.itemName];
-            }
-            return {...state};
+            const stateNext = { ...state };
+            stateNext[action.itemName].count--;
+            if (stateNext[action.itemName].count === 0) {
+                delete stateNext[action.itemName];
+            } 
+            return stateNext;
         case 'CLEAR_ITEMS':
             return {};
         default:
