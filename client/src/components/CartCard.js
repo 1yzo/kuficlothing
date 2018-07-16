@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { removeItem } from '../actions/cart';
 
 class CartCard extends React.Component {
+    removeItem = () => {
+        this.props.dispatch(removeItem(this.props.product));
+    }
+    
     render() {
         const { product } = this.props;
         return (
@@ -14,6 +19,7 @@ class CartCard extends React.Component {
                     />
                 </div>
                 <div className="cart-price">${product.price * product.count / 100}</div>
+                <i className="material-icons cart-remove" onClick={this.removeItem}>clear</i>
             </div>
         )
     }
