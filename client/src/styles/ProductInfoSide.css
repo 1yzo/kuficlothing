@@ -15,7 +15,7 @@ h1 {
 
 .price {
     font-size: 3rem;
-    margin-bottom: 7rem;
+    margin-bottom: 10rem;
     color: #202237;
 }
 
@@ -25,14 +25,14 @@ h1 {
     width: 100%;
     font-size: 3rem;
     background:  rgba(0, 0, 0, 0.664);
-    margin-top: 4rem;
     color: white;
     border: none;
     padding: 1rem;
 }
 
 .add-button--loading {
-    background: rgba(31, 134, 31, 0.685);
+    /* background: rgba(31, 134, 31, 0.685); */
+    background: #c6af40;
 }
 
 .sizes-container {
@@ -48,7 +48,8 @@ h1 {
     cursor: pointer;
     font-size: 2rem;
     font-weight: 700;
-    color: rgb(212, 205, 205);
+    /* color: rgb(212, 205, 205); */
+    color: #222225c4;
     border-radius: 50px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.226);
     padding: 1rem;
@@ -72,13 +73,13 @@ h1 {
     color: rgb(212, 205, 205);    
 }
 
-.size-button--disabled:after {
+/* .size-button--disabled:after {
     content:"";
     position:absolute;
-    border-top: 3px solid rgba(231, 33, 33, 0.897);
+    border-top: 2px solid rgba(231, 33, 33, 0.897);
     width:40px;
     transform: rotate(45deg);
-}
+} */
 
 .spinner {
     height: 30px;
@@ -102,4 +103,8 @@ h1 {
     to {
       transform: rotate(359deg);
     }
+  }
+
+  .error {
+      font-size: 2rem;
   }

@@ -30,6 +30,12 @@ h1 {
 
 .header__link--right {
     margin: 0;
+    display: flex;
+}
+
+.cart-count {
+    font-size: 2rem;
+    margin-left: 1rem;
 }
 
 .active-link {

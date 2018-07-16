@@ -18,6 +18,7 @@ const Header = (props) => {
                     </NavLink>
                     <NavLink className="header__link header__link--right" activeClassName="active-link" to="/cart">
                         <i className="material-icons">shopping_cart</i>
+                        <div className="cart-count">{props.cartCount}</div>
                     </NavLink>
                 </div>
                 <div className="padding-holder" />
@@ -29,7 +30,8 @@ const Header = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    shouldRender: !state.config.isAdminPage
+    shouldRender: !state.config.isAdminPage,
+    cartCount: Object.values(state.cart).length > 0 ? Object.values(state.cart).reduce((acc, curr) => acc + curr.count, 0) : 0
 });
 
 export default connect(mapStateToProps)(Header);

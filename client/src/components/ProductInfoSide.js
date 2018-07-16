@@ -6,19 +6,25 @@ import '../styles/ProductInfoSide.css';
 class ProductInfoSide extends React.Component {
     state = {
         size: '',
-        isAdding: false
+        isAdding: false,
+        error: ''
     }
     
     onAddToCartClick = () => {
-        this.setState(() => ({ isAdding: true }));
-        setTimeout(() => {
-            this.setState(() => ({ isAdding: false, size: '' }));
-        }, 1000);
+        if (this.state.size) {
+            this.setState(() => ({ isAdding: true }));
 
-        this.props.addToCart({
-            ...this.props.product,
-            size: this.state.size
-        });
+            setTimeout(() => {
+                this.setState(() => ({ isAdding: false, size: '', error: '' }));
+                this.props.addToCart({
+                    ...this.props.product,
+                    size: this.state.size
+                });
+            }, 1000);
+            
+        } else {
+            this.setState(() => ({ error: 'Select a size to continue' }));
+        }
     }
     
     setSize = (e) => {
@@ -80,11 +86,11 @@ class ProductInfoSide extends React.Component {
                         </div>
                     </button>
                 </div>
-                <div style={{ height: '2px', width: '100%', background: 'rgb(185, 185, 185)' }} />
+                <div style={{ height: '2px', width: '100%', background: 'rgb(185, 185, 185)', marginBottom: '7rem' }} />
+                {this.state.error && <div className="error">{this.state.error}</div>}
                 <button 
                     className={"add-button" + (this.state.isAdding ? " add-button--loading" : "")} 
                     onClick={this.onAddToCartClick}
-                    disabled={!this.state.size}
                 >
                     {!this.state.isAdding && 'Add To Cart'}
                     {this.state.isAdding && <div className="spinner" />}
