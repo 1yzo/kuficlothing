@@ -15,13 +15,14 @@ class ProductInfoSide extends React.Component {
             this.setState(() => ({ isAdding: true }));
 
             setTimeout(() => {
-                this.setState(() => ({ isAdding: false, size: '', error: '' }));
                 this.props.addToCart({
                     ...this.props.product,
+                    name: this.props.product.name + ' ' + this.state.size,
                     size: this.state.size
                 });
+                this.setState(() => ({ isAdding: false, size: '', error: '' }));
             }, 1000);
-            
+
         } else {
             this.setState(() => ({ error: 'Select a size to continue' }));
         }

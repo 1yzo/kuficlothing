@@ -98,3 +98,10 @@
 .slick-slider {
     max-width: 525px;
 }
+
+/* with box shadows
+.product-images {
+	box-shadow: 0px 1px 5px rgba(78,76,80,.185);;
+	padding: 2rem;
+	width: 53rem;
+} */
