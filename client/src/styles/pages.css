@@ -10,3 +10,11 @@
     grid-column-gap: 2rem;
     padding-top: 100px;
 }
+
+.page--shopping-cart-page {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-auto-rows: minmax(85vh, 85vh);
+    grid-column-gap: 5rem;
+}

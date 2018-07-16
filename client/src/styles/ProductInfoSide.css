@@ -1,9 +1,9 @@
-/* with box shadows
+/* with box shadows */
 .product-info-side {
 	box-shadow: 0px 1px 5px rgba(78,76,80,.185);
 	padding: 2rem;
-	height: 40rem;
-} */
+	align-self: start;
+}
 
 .button-wrapper {
     border: none;
@@ -54,7 +54,7 @@ h1 {
     font-weight: 700;
     /* color: rgb(212, 205, 205); */
     color: #222225c4;
-    border-radius: 50px;
+    border-radius: 50%;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.226);
     padding: 1rem;
     display: flex;
