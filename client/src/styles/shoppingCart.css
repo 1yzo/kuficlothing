@@ -25,6 +25,7 @@
 
 .cart-image {
     height: 200px;
+    width: 150px;
     border-radius: 10px;
 }
 
@@ -36,6 +37,24 @@
     align-self: center;
 }
 
+.quantity > input {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10px;
+    border: 1.5px solid #eee;
+    text-align: center;
+}
+
+.quantity > input::-webkit-inner-spin-button, 
+.quantity > input::-webkit-outer-spin-button { 
+    appearance: none;
+    margin: 0; 
+}
+
+.quantity > input {
+    appearance: textfield;
+}
+
 .cart-price {
     align-self: center;
     justify-self: center;
@@ -45,12 +64,4 @@
     align-self: center;
     justify-self: end;
     cursor: pointer;
-}
-
-.quantity > input {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 10px;
-    border: 1.5px solid #eee;
-    text-align: center;
 }

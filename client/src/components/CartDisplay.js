@@ -7,7 +7,7 @@ class CartDisplay extends React.Component {
         return (
             <div className="cart-display">
                 {this.props.items.map((item, i) => (
-                    <CartCard key={i} product={item}/>
+                    <CartCard key={i} product={item} count={item.count}/>
                 ))}
             </div>
         );
