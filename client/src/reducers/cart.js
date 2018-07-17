@@ -15,14 +15,27 @@ export default (state = defaultCartState, action) => {
             }
             return { ...state };
         case 'REMOVE_ITEM':
-            const stateNext = { ...state };
-            stateNext[action.itemName].count--;
-            if (stateNext[action.itemName].count === 0) {
+            let stateNext = { ...state };
+
+            let itemNext = { ...state[action.itemName] };
+            itemNext.count--;
+            stateNext[action.itemName] = itemNext;
+            
+            if (stateNext[action.itemName].count <= 0) {
                 delete stateNext[action.itemName];
             } 
             return stateNext;
+        case 'SET_COUNT':
+            const stateNext_setCount = { ...state };
+            const itemNext_SetCount = { ...state[action.itemName], count: action.count };
+            stateNext_setCount[action.itemName] = itemNext_SetCount;
+            return stateNext_setCount;
         case 'CLEAR_ITEMS':
             return {};
+        case 'CLEAR_ITEM':
+            const stateNext_clearItem = { ...state };
+            delete stateNext_clearItem[action.itemName];
+            return stateNext_clearItem;
         default:
             return state;
     }

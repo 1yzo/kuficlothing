@@ -2,7 +2,8 @@
 .product-info-side {
 	box-shadow: 0px 1px 5px rgba(78,76,80,.185);
 	padding: 2rem;
-	align-self: start;
+    align-self: start;
+    border-radius: 10px;
 }
 
 .button-wrapper {

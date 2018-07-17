@@ -21,7 +21,7 @@ class ProductInfoSide extends React.Component {
                     size: this.state.size
                 });
                 this.setState(() => ({ isAdding: false, size: '', error: '' }));
-            }, 1000);
+            }, 700);
 
         } else {
             this.setState(() => ({ error: 'Select a size to continue' }));

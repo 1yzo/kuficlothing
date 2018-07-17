@@ -31,13 +31,25 @@
 
 .cart-name {
     align-self: center;
+    font-weight: 600;
+    color: #40424a;
 }
 
 .quantity {
     align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.quantity__button {
+    font-weight: 600;
+    color: #40424a;
+    cursor: pointer;
+    user-select: none;
 }
 
 .quantity > input {
+    margin: 0 1rem;
     width: 4rem;
     height: 4rem;
     border-radius: 10px;
@@ -58,10 +70,14 @@
 .cart-price {
     align-self: center;
     justify-self: center;
+    font-weight: 600;
+    color: #40424a;
 }
 
 .cart-remove {
     align-self: center;
     justify-self: end;
     cursor: pointer;
+    font-weight: 600;
+    color: #40424a;
 }
