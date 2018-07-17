@@ -7,10 +7,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -21,10 +21,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -35,10 +35,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -49,10 +49,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -63,10 +63,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -77,10 +77,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -91,10 +91,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -105,10 +105,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -119,10 +119,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -133,10 +133,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -147,10 +147,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -161,10 +161,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -175,10 +175,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -189,10 +189,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -203,10 +203,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -217,10 +217,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -231,10 +231,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -245,10 +245,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -259,10 +259,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -273,10 +273,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     },
     {
@@ -287,10 +287,10 @@ const entries = [
         extraPics: ['none'],
         subcategory: ['none'],
         stock: {
-            small: 0,
-            medium: 0,
-            large: 0,
-            xLarge: 0
+            small: 100,
+            medium: 100,
+            large: 100,
+            xLarge: 100
         }
     }
 ];

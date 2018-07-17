@@ -19,7 +19,7 @@ class CartCard extends React.Component {
         const { product } = this.props;
         const count = product.count + 1;
         const dir = e.target.attributes.value.value;
-        if (dir === 'down') {
+        if (dir === 'down' && product.count >= 1) {
             this.props.dispatch(removeItem(product));
         } else if (dir === 'up') {
             this.props.dispatch(setCount(product.name, count));

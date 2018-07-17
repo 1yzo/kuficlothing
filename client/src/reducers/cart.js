@@ -21,9 +21,9 @@ export default (state = defaultCartState, action) => {
             itemNext.count--;
             stateNext[action.itemName] = itemNext;
             
-            if (stateNext[action.itemName].count <= 0) {
-                delete stateNext[action.itemName];
-            } 
+            // if (stateNext[action.itemName].count <= 0) {
+            //     delete stateNext[action.itemName];
+            // } 
             return stateNext;
         case 'SET_COUNT':
             const stateNext_setCount = { ...state };

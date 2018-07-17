@@ -9,6 +9,7 @@ import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { startSetProducts, startAddProduct } from './actions/products';
 import LoadingPage from './components/LoadingPage';
+import database  from './firebase/firebase';
 
 const store = configureStore().store;
 const persistor = configureStore().persistor;
@@ -28,4 +29,3 @@ store.dispatch(startSetProducts()).then(() => {
     ReactDOM.render(jsx, document.getElementById('root'));
     registerServiceWorker();
 });
-

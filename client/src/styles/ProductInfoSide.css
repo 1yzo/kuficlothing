@@ -33,6 +33,7 @@ h1 {
     border: none;
     padding: 1rem;
     transition: color 200ms ease-in-out;
+    border-radius: 10px;
 }
 
 .add-button--loading {
