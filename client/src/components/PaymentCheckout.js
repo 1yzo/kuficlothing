@@ -26,7 +26,6 @@ class PaymentCheckout extends React.Component {
         })
             .then((res) => res.json())
             .then((res) => {
-                this.props.history.push('/');
                 const { amount, id: stripeChargeId } = res;
                 database.ref('orders').push({
                     stripeChargeId,
@@ -57,6 +56,7 @@ class PaymentCheckout extends React.Component {
                             }, (error, committed, snapshot) => {
                                 this.props.dispatch(editProductStock(item.id, item.size, snapshot.val()));
                                 this.props.dispatch(clearItems());
+                                this.props.history.push('/');
                             });
                         })
                     }
