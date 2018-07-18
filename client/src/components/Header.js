@@ -5,7 +5,7 @@ import '../styles/header.css';
 import { NavLink } from 'react-router-dom';
 
 const Header = (props) => { 
-    // if (props.shouldRender) {
+    if (props.shouldRender) {
         return (
             <div className="header">
                 <div className="padding-holder" />
@@ -36,9 +36,9 @@ const Header = (props) => {
                 <div className="padding-holder" />
             </div>
         );
-    // } else {
-    //     return null;
-    // }
+    } else {
+        return null;
+    }
 }
 
 const mapStateToProps = (state) => ({
