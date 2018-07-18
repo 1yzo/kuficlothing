@@ -1,8 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { clearItem, setCount, removeItem } from '../actions/cart';
+import database from '../firebase/firebase';
 
 class CartCard extends React.Component {
+    state = {
+        error: '',
+        liveStock: {}
+    }
+
+    componentDidMount() {
+        database.ref(`products/${this.props.product.id}/stock`).once('value', (snapshot) => {
+            this.setState(() => ({ liveStock: snapshot.val() }));
+        });
+    }
+    
     removeItem = () => {
         this.props.dispatch(clearItem(this.props.product.name));
     }
@@ -10,10 +22,14 @@ class CartCard extends React.Component {
     onQuantityChange = (e) => {
         const { product } = this.props;
         const quantity = Number(e.target.value); 
-    if ((/[0-9]*/).test(quantity) && quantity >= 0) {
+        if ((/[0-9]*/).test(quantity) && quantity >= 0) {
             this.props.dispatch(setCount(product.name, quantity));
+            database.ref(`products/${this.props.product.id}/stock`).once('value', (snapshot) => {
+                this.setState(() => ({ liveStock: snapshot.val() }));
+            });
         }
     }    
+    
     
     onQuantityClick = (e) => {
         const { product } = this.props;
@@ -31,7 +47,11 @@ class CartCard extends React.Component {
         return (
             <div className="cart-card">
                 <img className="cart-image" src={product.image} alt={product.name} />
-                <div className="cart-name">{product.name}</div>
+                <div style={{ alignSelf: 'center' }}>
+                    <div className="cart-name">{product.name}</div>
+                    {product.count > this.state.liveStock[product.size] &&
+                         <div className="error" style={{ marginTop: '3rem', color: 'red' }}>Not enough of this item in stock</div>}
+                </div>
                 <div className="quantity">
                     <div className="quantity__button" onClick={this.onQuantityClick} value="down">-</div>
                     <input 
