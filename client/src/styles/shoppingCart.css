@@ -35,6 +35,10 @@
     width: 30rem;
 }
 
+.cart-checkout__button:disabled {
+    background:  rgba(0, 0, 0, 0.363);    
+}
+
 .cart-display {
     max-width: 120rem;
     justify-self: center;

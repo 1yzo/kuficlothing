@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearItem, setCount, removeItem } from '../actions/cart';
 import database from '../firebase/firebase';
+import { toggleCheckout } from '../actions/config';
 
 class CartCard extends React.Component {
     state = {
@@ -49,8 +50,7 @@ class CartCard extends React.Component {
                 <img className="cart-image" src={product.image} alt={product.name} />
                 <div style={{ alignSelf: 'center' }}>
                     <div className="cart-name">{product.name}</div>
-                    {product.count > this.state.liveStock[product.size] &&
-                         <div className="error" style={{ marginTop: '3rem', color: 'red' }}>Not enough of this item in stock</div>}
+                    {product.count > this.state.liveStock[product.size] && <StockErrorMessage dispatch={this.props.dispatch}/>}
                 </div>
                 <div className="quantity">
                     <div className="quantity__button" onClick={this.onQuantityClick} value="down">-</div>
@@ -69,3 +69,19 @@ class CartCard extends React.Component {
 }
 
 export default connect()(CartCard);
+
+class StockErrorMessage extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(toggleCheckout(true));
+    }
+
+    componentWillUnmount() {
+        this.props.dispatch(toggleCheckout(false));
+    }
+    
+    render() {
+        return (
+            <div className="error" style={{ marginTop: '3rem', color: 'red' }}>Not enough of this item in stock</div>
+        );
+    }
+}

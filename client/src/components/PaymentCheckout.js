@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import database from '../firebase/firebase';
 import { editProductStock } from '../actions/products';
+import { clearItems } from '../actions/cart';
 
 
 class PaymentCheckout extends React.Component {
@@ -55,6 +56,7 @@ class PaymentCheckout extends React.Component {
                                 return size - (item.count);
                             }, (error, committed, snapshot) => {
                                 this.props.dispatch(editProductStock(item.id, item.size, snapshot.val()));
+                                this.props.dispatch(clearItems());
                             })
                         })
                     }
