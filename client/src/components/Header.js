@@ -15,7 +15,7 @@ const Header = (props) => {
                             className="header__link" to="/shop/all" 
                             activeClassName="active-link" 
                             exact
-                            isActive={() => { 
+                            isActive={() => {  
                                 console.log(props.location);
                                 return props.location.pathname.includes('shop');
                             }}
