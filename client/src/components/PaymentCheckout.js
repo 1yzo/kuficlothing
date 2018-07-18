@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import database from '../firebase/firebase';
+import { editProductStock } from '../actions/products';
+
 
 class PaymentCheckout extends React.Component {
     onToken = (token, args) => {
@@ -50,8 +53,10 @@ class PaymentCheckout extends React.Component {
                         }).then(() => {
                             database.ref(`products/${item.id}/stock/${item.size}`).transaction((size) => {
                                 return size - (item.count);
-                            });
-                        });;
+                            }, (error, committed, snapshot) => {
+                                this.props.dispatch(editProductStock(item.id, item.size, snapshot.val()));
+                            })
+                        })
                     }
                 });
             });
@@ -74,4 +79,4 @@ class PaymentCheckout extends React.Component {
     }
 }
 
-export default PaymentCheckout;
+export default connect()(PaymentCheckout);

@@ -19,6 +19,19 @@ export default (state = defaultProductsReducer, action) => {
                     return product;
                 }
             });
+        case 'EDIT_PRODUCT_STOCK':
+            return state.map((product) => {
+                if (product.id === action.id) {
+                    const stockNext = product.stock;
+                    stockNext[action.size] = action.quantity;
+                    return {
+                        ...product,
+                        stock: stockNext
+                    };
+                } else {
+                    return product;
+                }
+            })
         default:
             return state;
     }

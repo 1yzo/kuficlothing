@@ -62,3 +62,10 @@ export const startEditProduct = (id, edits) => {
         });
     }
 }
+
+export const editProductStock = (id, size, quantity) => ({
+    type: 'EDIT_PRODUCT_STOCK',
+    id,
+    size,
+    quantity
+});
