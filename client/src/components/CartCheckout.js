@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { clearItems } from '../actions/cart';
 import PaymentCheckout from './PaymentCheckout';
 
 class CartCheckout extends React.Component {

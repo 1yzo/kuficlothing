@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import StripeCheckout from 'react-stripe-checkout';
 import database from '../firebase/firebase';
 import { editProductStock } from '../actions/products';
@@ -25,6 +26,7 @@ class PaymentCheckout extends React.Component {
         })
             .then((res) => res.json())
             .then((res) => {
+                this.props.history.push('/');
                 const { amount, id: stripeChargeId } = res;
                 database.ref('orders').push({
                     stripeChargeId,
@@ -81,4 +83,4 @@ class PaymentCheckout extends React.Component {
     }
 }
 
-export default connect()(PaymentCheckout);
+export default withRouter(connect()(PaymentCheckout));
