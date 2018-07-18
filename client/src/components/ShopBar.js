@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import '../styles/shopBar.css';
 import { sortByPrice } from '../actions/filters';
 
@@ -48,4 +49,4 @@ const mapStateToProps = (state) => ({
     priceDir: state.filters.sortBy
 });
 
-export default connect(mapStateToProps)(ShopBar);
+export default withRouter(connect(mapStateToProps)(ShopBar));
