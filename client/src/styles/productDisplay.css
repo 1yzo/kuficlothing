@@ -32,6 +32,25 @@
     align-items: center;
     width: 228px;
     height: 303px;
+    animation: load 1s ease-in-out 1;
+    transition: transform 300ms ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card:active {
+    transform: scale(1);
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }   
 }
 
 .product-card:hover .overlay {
@@ -63,7 +82,7 @@
     color: white;
     position: absolute;
     bottom: 2rem;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
     width: 100%;
 }
 
