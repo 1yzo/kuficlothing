@@ -29,7 +29,7 @@ class ProductInfoSide extends React.Component {
     }
     
     setSize = (e) => {
-        const size = e.target.children[0].attributes.value.value;
+        const size = e.currentTarget.attributes.value.value;
         if (this.props.product.stock[size] > 0) {
             this.setState(() => ({ size }));
         }
@@ -42,40 +42,55 @@ class ProductInfoSide extends React.Component {
                 <div className="price">${this.props.product.price / 100}</div>
                 <div style={{ height: '2px', width: '100%', background: 'rgb(185, 185, 185)' }} />
                 <div className="sizes-container">
-                    <button className="button-wrapper"onClick={this.setSize} disabled={this.props.product.stock.small < 1}>
+                    <button
+                        className="button-wrapper"
+                        onClick={this.setSize}
+                        disabled={this.props.product.stock.small < 1}
+                        value="small"
+                    >
                         <div 
                             className={"size-button" + (this.props.product.stock.small < 1 ? "  size-button--disabled" : "")
                                 + (this.state.size === 'small' ? " size-button--selected" : "")
                             }
-                            onClick={this.setSize}
-                            value="small"
                         >
                             S
                         </div>
                     </button>
-                    <button className="button-wrapper"onClick={this.setSize} disabled={this.props.product.stock.medium < 1}>
+                    <button 
+                        className="button-wrapper"
+                        onClick={this.setSize}
+                        disabled={this.props.product.stock.medium < 1}
+                        onClick={this.setSize}
+                        value="medium"
+                    >
                         <div
                             className={"size-button" + (this.props.product.stock.medium < 1 ? "  size-button--disabled" : "")
                                 + (this.state.size === 'medium' ? " size-button--selected" : "")
                             }
-                            onClick={this.setSize}
-                            value="medium"
                         >
                             M
                         </div>
                     </button>
-                    <button className="button-wrapper"onClick={this.setSize} disabled={this.props.product.stock.large < 1}>
+                    <button 
+                        className="button-wrapper"
+                        onClick={this.setSize}
+                        disabled={this.props.product.stock.large < 1}
+                        value="large"
+                    >
                         <div 
                             className={"size-button" + (this.props.product.stock.large < 1 ? "  size-button--disabled" : "")
                                 + (this.state.size === 'large' ? " size-button--selected" : "")
                             }
-                            onClick={this.setSize}
-                            value="large"
                         >
                             L
                         </div>
                     </button>
-                    <button className="button-wrapper"onClick={this.setSize} disabled={this.props.product.stock.xLarge < 1}>
+                    <button
+                        className="button-wrapper"
+                        onClick={this.setSize}
+                        disabled={this.props.product.stock.xLarge < 1}
+                        value="xLarge"
+                    >
                         <div 
                             className={"size-button" + (this.props.product.stock.xLarge < 1 ? "  size-button--disabled" : "")
                                 + (this.state.size === 'xLarge' ? " size-button--selected" : "")
