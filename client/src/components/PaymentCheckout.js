@@ -26,6 +26,7 @@ class PaymentCheckout extends React.Component {
         })
             .then((res) => res.json())
             .then((res) => {
+                console.log(res); 
                 const { amount, id: stripeChargeId } = res;
                 database.ref('orders').push({
                     stripeChargeId,
