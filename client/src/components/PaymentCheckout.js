@@ -39,18 +39,16 @@ class PaymentCheckout extends React.Component {
                     shipped: false
                 }).then(() => {
                     for (let item of this.props.cart) {
-                        database.ref(`stats/${item.name}`).transaction((product) => {
-                            if (product === null) {
+                        database.ref(`stats/${item.id}/${item.size}`).transaction((current) => {
+                            if (current === null) {
                                 return {
-                                    ...product,
                                     sales: item.count,
                                     revenue: item.price * item.count
                                 }
                             } else {
                                 return {
-                                    ...product,
-                                    sales: product.sales + item.count,
-                                    revenue: product.revenue + (item.price * item.count)
+                                    sales: current.sales + item.count,
+                                    revenue: current.revenue + (item.price * item.count)
                                 }
                             }
                         }).then(() => {
