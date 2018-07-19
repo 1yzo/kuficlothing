@@ -7,7 +7,7 @@ const MissionPage = () => (
             We are all born equal, but we are not treated equally. This is why we must stand up for
             the equality of every person regardless of their race, religion, gender, and beliefs.
         </p>
-        <div className="goals-header"><span>M</span>AIN GOALS</div>
+        <div className="goals-header"><span>M</span>ain goals</div>
         <div className="goals-container">
             <div className="goal">Show beauty in the small and simple things</div>
             <div className="goal">Dispel misconceptions about Muslims</div>

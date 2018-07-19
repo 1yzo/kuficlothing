@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import StripeCheckout from 'react-stripe-checkout';
+import moment from 'moment';
 import database from '../firebase/firebase';
 import { editProductStock } from '../actions/products';
 import { clearItems } from '../actions/cart';
@@ -30,12 +31,13 @@ class PaymentCheckout extends React.Component {
                 database.ref('orders').push({
                     stripeChargeId,
                     amount,
-                    name: addressInfo.billing_name,
+                    customerName: addressInfo.billing_name,
                     addressInfo,
                     cart: this.props.cart.map(({ image, ...rest }) => ({
                         ...rest
                     })),
-                    shipped: false
+                    shipped: false,
+                    date: moment().valueOf()
                 }).then(() => {
                     for (let item of this.props.cart) {
                         database.ref(`stats/${item.id}/${item.size}`).transaction((current) => {
