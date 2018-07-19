@@ -24,11 +24,19 @@
     font-size: 3rem;
     color: #aaaeb1;
     margin-right: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
 }
 
-.total-price > span {
+.price-tag {
     font-size: 3rem;
     color: #40424a;
+    margin-left: 1rem;
+}
+
+.shipping-cost {
+    font-size: 2rem;
+    align-self: center;
 }
 
 .cart-checkout__button {

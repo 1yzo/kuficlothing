@@ -26,6 +26,13 @@
     color: #c6af40;
 }
 
+.search-bar {
+    margin-bottom: 4rem;
+    color: #aaaeb1;
+    border: none;
+    border-bottom: 1px solid #aaaeb1;
+}
+
 .price-dir {
     cursor: pointer;
     height: 20px;

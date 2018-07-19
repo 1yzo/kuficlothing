@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import '../styles/shopBar.css';
-import { sortByPrice } from '../actions/filters';
+import { sortByPrice, setText } from '../actions/filters';
 
 class ShopBar extends React.Component {
     sortPriceLowToHigh = () => {
@@ -13,10 +13,27 @@ class ShopBar extends React.Component {
     sortPriceHighToLow = () => {
         this.props.dispatch(sortByPrice('priceHigh'));
     }
+
+    onSearchTextChange = (e) => {
+        const text = e.target.value;
+        this.props.dispatch(setText(text));
+    }
+
+    clearSearchText = () => {
+        this.props.dispatch(setText(''));
+    }
     
     render() {
         return (
             <div className="shop-bar">
+                <input
+                    className="search-bar"
+                    type="text"
+                    placeholder={`Search...`}
+                    value={this.props.searchText}
+                    onChange={this.onSearchTextChange}
+                    onBlur={this.clearSearchText}
+                />
                 <div className="shop-bar__title">CATEGORY</div>
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/all">All</NavLink>
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/tops">Tops</NavLink>
@@ -46,7 +63,8 @@ class ShopBar extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    priceDir: state.filters.sortBy
+    priceDir: state.filters.sortBy,
+    searchText: state.filters.text
 });
 
 export default withRouter(connect(mapStateToProps)(ShopBar));
