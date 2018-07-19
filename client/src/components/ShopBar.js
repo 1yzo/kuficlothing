@@ -23,6 +23,10 @@ class ShopBar extends React.Component {
         this.props.dispatch(setText(''));
     }
     
+    componentWillUnmount() {
+        this.clearSearchText();
+    }
+    
     render() {
         return (
             <div className="shop-bar">
@@ -32,7 +36,6 @@ class ShopBar extends React.Component {
                     placeholder={`Search...`}
                     value={this.props.searchText}
                     onChange={this.onSearchTextChange}
-                    onBlur={this.clearSearchText}
                 />
                 <div className="shop-bar__title">CATEGORY</div>
                 <NavLink className="category-label" activeClassName="category-label--active" to="/shop/all">All</NavLink>

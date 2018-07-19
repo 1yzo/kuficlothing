@@ -31,7 +31,7 @@
 .price-tag {
     font-size: 3rem;
     color: #40424a;
-    margin-left: 1rem;
+    margin: 0 0.5rem;
 }
 
 .shipping-cost {
@@ -99,6 +99,7 @@
 }
 
 .quantity > input {
+    outline: none;
     margin: 0 1rem;
     width: 4rem;
     height: 4rem;

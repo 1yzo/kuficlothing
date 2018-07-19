@@ -1,5 +1,5 @@
 .page {
-    padding-top: 69.7px;
+    padding-top: 100px;
     padding-left: 5rem;
     padding-right: 5rem;
 }
@@ -16,4 +16,66 @@
     display: grid;
     grid-template-columns: 4fr;
     grid-column-gap: 5rem;
+}
+
+.page--mission-page {
+    /* color: #c6af40; */
+    color: #202237b6;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.goals-header {
+    font-family: Georgia sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    animation: load 1s ease-in-out 1;
+}
+
+.goals-header > span {
+    font-family: Georgia;
+    color: #c6af40;
+    font-size: 60px;
+}
+
+.page--mission-page p {
+    margin: 0;
+    margin: 2rem 0;
+    max-width: 70rem;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    animation: load 1s ease-in-out 1;        
+}
+
+.page--mission-page p:first-child:first-letter {
+    /* color: #202237b6; */
+    color: #c6af40;
+    float: left;
+    font-family: Georgia;
+    font-size: 85px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+  }
+
+.goals-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.goal {
+    animation: load 1s ease-in-out 1;    
+    font-size: 2rem;
+    max-width: 25rem;
+}
+
+@media (max-width: 745px) {
+    .page--mission-page p {
+        font-size: 2rem;
+    }
+    .goals-container {
+        grid-template-columns: 1fr;
+    }
 }

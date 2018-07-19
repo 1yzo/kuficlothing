@@ -27,6 +27,7 @@
 }
 
 .search-bar {
+    outline: none;
     margin-bottom: 4rem;
     color: #aaaeb1;
     border: none;
