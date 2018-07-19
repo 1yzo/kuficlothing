@@ -43,13 +43,27 @@ class CartCard extends React.Component {
         }
     }
     
+    formatName = (name) => {
+        const arr = name.split(' ');
+        const size = arr.slice(arr.length - 1)[0];
+        let sizeLetter = size.slice(0, 1);
+        sizeLetter = sizeLetter === 'x' ? 'XL' : sizeLetter.toUpperCase();
+        const subName = name.replace(size, '');
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="cart-name">{subName}</div>
+                <div className="cart-name cart-name--size-letter">{sizeLetter}</div>
+            </div>
+        );
+    }
+    
     render() {
         const { product, count } = this.props;
         return (
             <div className="cart-card">
                 <img className="cart-image" src={product.image} alt={product.name} />
                 <div style={{ alignSelf: 'center' }}>
-                    <div className="cart-name">{product.name}</div>
+                    <div className="cart-name">{this.formatName(product.name)}</div>
                     {product.count > this.state.liveStock[product.size] && <StockErrorMessage dispatch={this.props.dispatch}/>}
                 </div>
                 <div className="quantity">

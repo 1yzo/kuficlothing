@@ -74,9 +74,14 @@
 }
 
 .cart-name {
-    align-self: center;
+    /* align-self: center; */
     font-weight: 600;
     color: #40424a;
+}
+
+.cart-name--size-letter {
+    color: #aaaeb1;
+    margin-top: 1rem;
 }
 
 .quantity {
