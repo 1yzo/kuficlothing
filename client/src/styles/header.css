@@ -16,6 +16,10 @@ h1 {
     color: #202237; 
 }
 
+.hamburger-trigger {
+    cursor: pointer;
+}
+
 .logo {
     position: absolute;
     left: 50%;
@@ -31,6 +35,10 @@ h1 {
     color: #202237cb;
     /* color: #202237; */
     font-weight: 700;
+}
+
+.header__link--ham {
+    font-size: 2.5rem;
 }
 
 .header__link:hover {
@@ -59,4 +67,10 @@ h1 {
 
 .padding-holder {
     flex-basis: 5rem;
+}
+
+@media (max-width: 611px) {
+    .padding-holder {
+        flex-basis: 2rem;
+    }
 }

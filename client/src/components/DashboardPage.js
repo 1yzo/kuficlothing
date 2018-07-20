@@ -36,7 +36,7 @@ class DashboardPage extends React.Component {
                 }
               },
               {
-                breakpoint: 480,
+                breakpoint: 590,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1
@@ -55,7 +55,7 @@ class DashboardPage extends React.Component {
                 </div>
                 <Slider className="main-slider"{...settings}>
                     {this.props.featuredItems.map((item, i) => (
-                        <div className="slide-holder">
+                        <div key={i} className="slide-holder">
                             {<img onClick={() => this.props.history.push(`/products/${item.name}`)}src={item.image} alt={item.name}/>}
                         </div>
                     ))}

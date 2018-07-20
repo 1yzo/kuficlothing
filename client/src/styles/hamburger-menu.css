@@ -1,0 +1,23 @@
+.hamburger-menu {
+    position: fixed;
+    margin: 0;
+    transition: transform 400ms ease-in-out;
+    white-space: nowrap;
+    overflow: scroll;
+    transform: translateX(-100%);
+    width: 60%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    z-index: 2;
+    padding-top: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-shadow: 2px 3px 5px rgba(78,76,80,.185);
+}
+
+@media (max-width: 611px) {
+    .hamburger-menu--show {
+        transform: translateX(0);
+    }
+}
+
