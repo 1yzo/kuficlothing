@@ -124,6 +124,14 @@
     max-width: 525px;
 }
 
+.image-slider .slick-prev {
+    left: -30px;
+}
+
+.image-slider .slick-next {
+    right: -30px;
+}
+
 /* with box shadows */
 /* .product-images {
 	box-shadow: 0px 1px 5px rgba(78,76,80,.185);;

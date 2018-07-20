@@ -58,6 +58,21 @@
     cursor: pointer;
 }
 
+.slick-prev {
+    left: 10px;
+    z-index: 5;
+}
+.slick-prev::before {
+    color: black;
+}
+
+.slick-next {
+    right: 10px;
+}
+.slick-next::before {
+    color: black;
+}
+
 @media (max-width: 745px) {
     .main-media > h1 {
         font-size: 3rem;
