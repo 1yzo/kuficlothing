@@ -18,12 +18,21 @@
     text-decoration: none;
     margin: 0;
     font-weight: 300;
-    color: #202237;
+    color: #202237cb;
     margin-bottom: 3rem;
+}
+
+.category-label:hover {
+    color: black;
 }
 
 .category-label--active {
     color: #c6af40;
+}
+
+.category-label--active:hover {
+    color: #c6af40;
+    z-index: 3;
 }
 
 .search-bar {
@@ -37,12 +46,20 @@
 .price-dir {
     cursor: pointer;
     height: 20px;
-    color: #202237;
+    color: #202237cb;    
     margin: 0 0.5rem;
     transition: color 200ms ease-out;
 }
 
+.price-dir:hover {
+    color: black;
+}
+
 .price-dir--active {
+    color: #c6af40;
+}
+
+.price-dir--active:hover {
     color: #c6af40;
 }
 
