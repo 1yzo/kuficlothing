@@ -9,7 +9,8 @@ const settings = {
     arrows: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    className: 'image-slider'
   };
 
 const ProductImages = ({ image, extraPics }) => {

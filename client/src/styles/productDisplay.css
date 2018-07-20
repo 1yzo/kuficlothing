@@ -22,6 +22,8 @@
 .card-holder {
     display: flex;
     justify-content: center;
+    height: 300px;
+    width: 225px;
 }
 
 .product-card {
@@ -118,7 +120,7 @@
     animation: load 1s ease-in-out 1;    
 }
 
-.slick-slider {
+.image-slider {
     max-width: 525px;
 }
 
