@@ -8,7 +8,7 @@ const ProductCard = ({ name, image, price, stock }) => {
                 <img src={`${image}`} alt={`${name}`} />
                 {(stock.small < 1 && stock.medium < 1 && stock.large < 1 && stock.xLarge < 1) &&
                     <div className="overlay overlay--stock">
-                        Sold Out
+                        SOLD OUT
                     </div>
                 }
                 <div className="overlay">

@@ -22,10 +22,11 @@ class HamburgerMenu extends React.Component {
 
     handleClick = (e) => {
         const targetClass = e.target.className;
-        console.log(targetClass);
-        if (!targetClass.includes('hamburger-menu') && !targetClass.includes('hamburger-trigger')) {
-            console.log(targetClass);
-            this.props.close();
+        if (targetClass) {
+            if (!targetClass.includes('hamburger-menu') && !targetClass.includes('hamburger-trigger')) {
+                console.log(targetClass);
+                this.props.close();
+            }
         }
     }
     
@@ -40,7 +41,7 @@ class HamburgerMenu extends React.Component {
                 style={this.state.style}
             >
                 {this.props.items.map((item, ix) => {
-                    return(<div key={ix}>{item}</div>);
+                    return(<div style={{ marginBottom: '2rem' }}key={ix}>{item}</div>);
                 })}
             </div>
         );

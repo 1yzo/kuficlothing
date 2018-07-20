@@ -4,7 +4,7 @@
     transition: transform 400ms ease-in-out;
     white-space: nowrap;
     overflow: scroll;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     width: 60%;
     height: 100%;
     -webkit-overflow-scrolling: touch;

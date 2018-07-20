@@ -94,13 +94,17 @@
 }
 
 .overlay--stock {
-    top: 0;
-    left: 0;
-    font-size: 3rem;
-    background: black;
-    height: 4rem;
-    text-align: center;
-    width: 100%;
+    top: 1rem;
+    left: 2rem;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f54257;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 7rem;
+    border-radius: 5px;
 }
 
 @media (max-width: 611px) {

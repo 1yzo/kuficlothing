@@ -35,6 +35,7 @@ h1 {
     color: #202237cb;
     /* color: #202237; */
     font-weight: 700;
+    user-select: none;
 }
 
 .header__link--ham {
@@ -73,4 +74,8 @@ h1 {
     .padding-holder {
         flex-basis: 2rem;
     }
+}
+
+.material-icons {
+    user-selecr: none;
 }

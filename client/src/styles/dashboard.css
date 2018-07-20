@@ -48,6 +48,10 @@
     outline: none;
 }
 
+.slide-holder:focus {
+    outline: none;
+}
+
 .main-slider img {
     border-radius: 10px;
     position: absolute;
