@@ -45,6 +45,7 @@
     position: relative;
     height: 300px;
     width: 225px;
+    outline: none;
 }
 
 .main-slider img {

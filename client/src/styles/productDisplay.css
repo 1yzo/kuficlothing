@@ -110,6 +110,9 @@
     .product-card {
         justify-self: center;
     }
+    .card-holder {
+        justify-self: center;
+    }
 }
 
 .image-big {
