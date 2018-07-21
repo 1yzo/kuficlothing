@@ -110,13 +110,16 @@
 @media (max-width: 611px) {
     .product-display {
         margin-left: 0;
-        padding-top: 13rem;
+        padding-top: 15rem;
     }
     .product-card {
         justify-self: center;
     }
     .card-holder {
         justify-self: center;
+    }
+    .overlay {
+        opacity: 100;
     }
 }
 

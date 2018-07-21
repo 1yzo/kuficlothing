@@ -83,7 +83,6 @@
 .mobile-shop-bar {
     display: flex;
     flex-direction: column;
-    background: white;
     z-index: 1;
     width: 225px;
     position: absolute;
