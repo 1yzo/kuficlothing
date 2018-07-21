@@ -21,13 +21,13 @@ class HamburgerMenu extends React.Component {
     }
 
     handleClick = (e) => {
-        const targetClass = e.target.className;
+        const targetClass = e.target.className || 'none';
         if (targetClass) {
             if (!targetClass.includes('hamburger-menu') && !targetClass.includes('hamburger-trigger')) {
                 console.log(targetClass);
                 this.props.close();
             }
-        }
+        } 
     }
     
     componentDidMount() {

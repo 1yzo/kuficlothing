@@ -110,6 +110,7 @@
 @media (max-width: 611px) {
     .product-display {
         margin-left: 0;
+        padding-top: 3rem;
     }
     .product-card {
         justify-self: center;

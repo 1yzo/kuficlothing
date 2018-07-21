@@ -68,4 +68,34 @@
     .shop-bar {
         display: none;
     }
+    .price-dir {
+        font-size: 3rem;
+    }
+    .category-label {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    .search-bar {
+        margin-bottom: 1rem;
+    }
+}
+
+.mobile-shop-bar {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    z-index: 1;
+    width: 225px;
+}
+
+.mobile-shop-bar select {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+@media (min-width: 611px) {
+    .mobile-shop-bar {
+        display: none;
+    }
 }
