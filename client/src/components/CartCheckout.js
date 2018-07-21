@@ -13,7 +13,7 @@ class CartCheckout extends React.Component {
                 </div>
                 <PaymentCheckout amount={this.props.totalPrice + 650} cart={this.props.items}>
                     <button
-                        className="add-button cart-checkout__button"
+                        className="cart-checkout__button"
                         disabled={!this.props.canCheckout || this.props.itemCount <= 0}
                     >
                         Check Out

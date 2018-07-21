@@ -60,23 +60,45 @@ class CartCard extends React.Component {
     render() {
         const { product, count } = this.props;
         return (
-            <div className="cart-card">
-                <img className="cart-image" src={product.image} alt={product.name} />
-                <div style={{ alignSelf: 'center' }}>
-                    <div className="cart-name">{this.formatName(product.name)}</div>
-                    {product.count > this.state.liveStock[product.size] && <StockErrorMessage dispatch={this.props.dispatch}/>}
+            <div>
+                <div className="cart-card desktop-only">
+                    <img className="cart-image" src={product.image} alt={product.name} />
+                    <div style={{ alignSelf: 'center' }}>
+                        <div className="cart-name">{this.formatName(product.name)}</div>
+                        {product.count > this.state.liveStock[product.size] && <StockErrorMessage dispatch={this.props.dispatch}/>}
+                    </div>
+                    <div className="quantity">
+                        <div className="quantity__button" onClick={this.onQuantityClick} value="down">-</div>
+                        <input 
+                            type="number"
+                            value={count}
+                            onChange={this.onQuantityChange}
+                        />
+                        <div className="quantity__button" onClick={this.onQuantityClick} value="up">+</div>
+                    </div>
+                    <div className="cart-price" value="up">${product.price * count / 100}</div>
+                    <i className="material-icons cart-remove" onClick={this.removeItem}>clear</i>
                 </div>
-                <div className="quantity">
-                    <div className="quantity__button" onClick={this.onQuantityClick} value="down">-</div>
-                    <input 
-                        type="number"
-                        value={count}
-                        onChange={this.onQuantityChange}
-                    />
-                    <div className="quantity__button" onClick={this.onQuantityClick} value="up">+</div>
+                <div className="cart-card__mobile">
+                    <div style={{ alignSelf: 'center' }}>
+                        <div className="cart-name">{this.formatName(product.name)}</div>
+                        {product.count > this.state.liveStock[product.size] && <StockErrorMessage dispatch={this.props.dispatch}/>}
+                    </div>
+                    <img className="cart-image" src={product.image} alt={product.name} />
+                    <div style={{ display: 'flex', marginTop: '2rem' }}>
+                        <div className="quantity">
+                            <div className="quantity__button" onClick={this.onQuantityClick} value="down">-</div>
+                            <input 
+                                type="number"
+                                value={count}
+                                onChange={this.onQuantityChange}
+                            />
+                            <div className="quantity__button" onClick={this.onQuantityClick} value="up">+</div>
+                        </div>
+                        <div className="cart-price" value="up">${product.price * count / 100}</div>
+                        <i className="material-icons cart-remove" onClick={this.removeItem}>clear</i>
+                    </div>
                 </div>
-                <div className="cart-price" value="up">${product.price * count / 100}</div>
-                <i className="material-icons cart-remove" onClick={this.removeItem}>clear</i>
             </div>
         )
     }
