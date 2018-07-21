@@ -86,6 +86,9 @@
     background: white;
     z-index: 1;
     width: 225px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .mobile-shop-bar select {

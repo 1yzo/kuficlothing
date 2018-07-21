@@ -100,7 +100,7 @@
     .desktop-only {
         display: none;
     }
-    .page--shopping-cart-page {
+    .page {
         padding-right: 2rem;
         padding-left: 2rem;
     }
