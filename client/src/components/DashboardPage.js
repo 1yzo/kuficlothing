@@ -12,7 +12,7 @@ class DashboardPage extends React.Component {
     state = { isOverlap: false }
     
     handleScroll = () => {
-        if (window.pageYOffset > this.titleRef.offsetTop - 500) {
+        if (window.pageYOffset > this.titleRef.offsetTop - 150) {
             this.setState(() => ({ isOverlap: true }));
         } else {
             this.setState(() => ({ isOverlap: false }));
@@ -63,12 +63,15 @@ class DashboardPage extends React.Component {
         return (
             <div className="page--dashboard-page">
                 <div className="main-media">
-                    <div className={'title-container' + (this.state.isOverlap ? ' title-container--overlap': ' title-container--show')}>
+                    <div
+                        className={'title-container' + (this.state.isOverlap ? ' title-container--overlap': ' title-container--show')}
+                        ref={(el) => {this.titleRef = el}}
+                    >
                         <div className="subtitle">BEAUTY THROUGH SIMPLICITY</div>
                         <h1>KUFI CLOTHING</h1>
                     </div>
                 </div>
-                <div className="special-section" ref={(el) => {this.titleRef = el}}>
+                <div className="special-section">
                     <div className="special-section__title">NEW ARRIVALS</div>
                 </div>
                 <Slider className="main-slider"{...settings}>
