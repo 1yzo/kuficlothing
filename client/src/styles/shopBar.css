@@ -5,7 +5,6 @@
     position: fixed;
     left: 5rem;
     top: 7rem;
-    border-radius: 0;
 }
 
 .shop-bar__title {
@@ -42,6 +41,8 @@
     color: #aaaeb1;
     border: none;
     border-bottom: 1px solid #aaaeb1;
+    border-radius: none;
+    -webkit-appearance: none;
 }
 
 .price-dir {
