@@ -8,6 +8,7 @@
     "history": "4.7.2",
     "moment": "^2.18.1",
     "normalize.css": "7.0.0",
+    "numeral": "^2.0.6",
     "react": "^16.4.0",
     "react-awesome-slider": "^0.5.2",
     "react-dom": "^16.4.0",

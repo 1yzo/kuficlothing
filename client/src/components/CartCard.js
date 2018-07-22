@@ -117,7 +117,7 @@ class StockErrorMessage extends React.Component {
     
     render() {
         return (
-            <div className="error" style={{ marginTop: '3rem', color: 'red' }}>Not enough of this item in stock</div>
+            <div className="error">Not enough of this item in stock</div>
         );
     }
 }

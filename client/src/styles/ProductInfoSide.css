@@ -4,6 +4,7 @@
 	padding: 2rem;
     align-self: start;
     border-radius: 10px;
+    margin-bottom: 3rem;
 }
 
 .button-wrapper {
@@ -16,6 +17,7 @@ h1 {
     margin: 0;
     margin-bottom: 1rem;
     color: #202237;
+    word-break: word;
 }
 
 .price {
@@ -62,7 +64,7 @@ h1 {
     font-weight: 700;
     /* color: rgb(212, 205, 205); */
     color: #222225c4;
-    border-radius: 50%;
+    border-radius: 10px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.226);
     padding: 1rem;
     display: flex;
@@ -84,14 +86,6 @@ h1 {
     background: none;
     color: rgb(212, 205, 205);    
 }
-
-/* .size-button--disabled:after {
-    content:"";
-    position:absolute;
-    border-top: 2px solid rgba(231, 33, 33, 0.897);
-    width:40px;
-    transform: rotate(45deg);
-} */
 
 .spinner {
     height: 30px;
@@ -119,4 +113,22 @@ h1 {
 
   .error {
       font-size: 2rem;
+  }
+
+  @media (max-width: 611px) {
+      h1 {
+          font-size: 2.5rem;
+          text-align: center;
+      }
+      .price {
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+  }
+
+  @media (max-width: 945px){
+    .product-info-side {
+        margin-top: 4rem;
+        align-self: auto;
+    }
   }
