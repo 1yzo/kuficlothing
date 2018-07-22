@@ -66,10 +66,6 @@
     position: relative;
 }
 
-.cart-card-holder {
-    /* margin-top: 7rem; */
-}
-
 .cart-card {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
@@ -86,10 +82,8 @@
 }
 
 .cart-name {
-    /* align-self: center; */
     font-weight: 600;
     color: #40424a;
-    grid-area: name;
 }
 
 .cart-name--size-letter {
@@ -185,6 +179,9 @@
     }
     .cart-name {
         padding-right: 1rem;
+    }
+    .cart-name--size-letter {
+        margin-bottom: 1rem;
     }
     .error {
         margin-top: 1rem;

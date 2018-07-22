@@ -13,7 +13,7 @@ class CartCheckout extends React.Component {
                     <span className="price-tag">{numeral(this.props.totalPrice / 100).format('$0, 0.00')}</span>
                     <span className="shipping-cost"> + {numeral(650 * this.props.itemCount / 100).format('$0, 0.00')} shipping</span>
                 </div>
-                <PaymentCheckout amount={this.props.totalPrice + 650} cart={this.props.items}>
+                <PaymentCheckout amount={this.props.totalPrice + (this.props.itemCount * 650)} cart={this.props.items}>
                     <button
                         className="cart-checkout__button"
                         disabled={!this.props.canCheckout || this.props.itemCount <= 0}
@@ -28,7 +28,7 @@ class CartCheckout extends React.Component {
 
 const mapStateToProps = (state) => ({
     canCheckout: state.config.checkoutErrorCount === 0,
-    itemCount: Object.values(state.cart).length 
+    itemCount: Object.values(state.cart).reduce((acc, curr) => acc + curr.count, 0)
 });
 
 export default connect(mapStateToProps)(CartCheckout);

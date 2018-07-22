@@ -24,7 +24,6 @@ class HamburgerMenu extends React.Component {
         const targetClass = e.target.className || 'none';
         if (targetClass) {
             if (!targetClass.includes('hamburger-menu') && !targetClass.includes('hamburger-trigger')) {
-                console.log(targetClass);
                 this.props.close();
             }
         } 
@@ -32,6 +31,7 @@ class HamburgerMenu extends React.Component {
     
     componentDidMount() {
         window.addEventListener('click', this.handleClick);
+        window.addEventListener('touchend', this.handleClick);
     }
 
     render() {
