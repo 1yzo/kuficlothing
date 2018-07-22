@@ -10,8 +10,8 @@
 }
 
 .main-media > div {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    
     text-align: center;
 }
 
