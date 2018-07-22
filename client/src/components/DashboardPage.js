@@ -12,7 +12,8 @@ class DashboardPage extends React.Component {
     state = { isOverlap: false }
     
     handleScroll = () => {
-        if (window.pageYOffset > this.titleRef.offsetTop - 70) {
+        console.log(this.titleRef.offsetTop)
+        if (window.pageYOffset > this.titleRef.offsetTop - 140) {
             this.setState(() => ({ isOverlap: true }));
         } else {
             this.setState(() => ({ isOverlap: false }));
