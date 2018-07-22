@@ -42,7 +42,7 @@
     border: none;
     border-bottom: 1px solid #aaaeb1;
     border-radius: none;
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
 }
 
 .price-dir {

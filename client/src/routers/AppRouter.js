@@ -6,12 +6,12 @@ import ShopPage from '../components/ShopPage';
 import Header from '../components/Header';
 import ProductInfoPage from '../components/ProductInfoPage';
 import ShoppingCartPage from '../components/ShoppingCartPage';
-import AdminPage from '../components/AdminClient/AdminPage';
 import NotFoundPage from './NotFoundPage';
 import MissionPage from '../components/MissionPage';
+import AdminRouter from './AdminRouter';
 
 const AppRouter = () => (
-    <HashRouter >
+    <HashRouter>
         <div>
             <Header />
             <Switch>
@@ -19,8 +19,8 @@ const AppRouter = () => (
                 <Route path="/shop"  component={ShopPage} />
                 <Route path="/products/:productName" component={ProductInfoPage} />
                 <Route path="/cart" component={ShoppingCartPage} />
-                <Route path="/admin" component={AdminPage} />
                 <Route path="/mission" component={MissionPage} />
+                <Route path="/admin" component={AdminRouter} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
