@@ -6,9 +6,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
 }
 
-.main-media > h1 {
+.main-media > div {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+}
+
+.main-media  h1 {
     color: white;
     font-size: 7rem;
 }
@@ -16,6 +23,18 @@
 .subtitle {
     color: white;
     font-weight: 550;
+}
+
+.title-container {
+    transition: opacity 300ms ease-in-out;
+}
+
+.title-container--overlap {
+    opacity: 0;
+}
+
+.title-container--show {
+    opacity: 100;
 }
 
 .special-section {

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
 // import "../../node_modules/slick-carousel/slick/slick.css"; 
@@ -8,6 +9,20 @@ import '../styles/pages.css';
 import ProductCard from './ProductCard';
 
 class DashboardPage extends React.Component {
+    state = { isOverlap: false }
+    
+    handleScroll = () => {
+        if (window.pageYOffset > this.titleRef.offsetTop - 500) {
+            this.setState(() => ({ isOverlap: true }));
+        } else {
+            this.setState(() => ({ isOverlap: false }));
+        }
+    }
+    
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    
     render() {
         const settings = {
             arrows: true,
@@ -44,13 +59,16 @@ class DashboardPage extends React.Component {
               }
             ]
           };
+
         return (
             <div className="page--dashboard-page">
                 <div className="main-media">
-                    <div className="subtitle">BEAUTY THROUGH SIMPLICITY</div>
-                    <h1>KUFI CLOTHING</h1>
+                    <div className={'title-container' + (this.state.isOverlap ? ' title-container--overlap': ' title-container--show')}>
+                        <div className="subtitle">BEAUTY THROUGH SIMPLICITY</div>
+                        <h1>KUFI CLOTHING</h1>
+                    </div>
                 </div>
-                <div className="special-section">
+                <div className="special-section" ref={(el) => {this.titleRef = el}}>
                     <div className="special-section__title">NEW ARRIVALS</div>
                 </div>
                 <Slider className="main-slider"{...settings}>
