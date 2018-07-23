@@ -40,8 +40,8 @@
 }
 
 .special-section {
-    width: 99%;
-    padding: 1rem;
+    width: 100%;
+    padding: 1rem 0;
     display: flex;
     justify-content: center;
     border-bottom: 2px solid #eee;
@@ -100,6 +100,9 @@
 }
 
 @media (max-width: 745px) {
+    .main-media {
+        height: 50rem;
+    }
     .title-container h1 {
         font-size: 3rem;
         min-width: 25rem;
