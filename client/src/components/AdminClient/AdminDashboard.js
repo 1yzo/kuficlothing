@@ -55,7 +55,7 @@ class AdminDashboard extends React.Component {
                             type="text"
                             value={this.state.searchQuery}
                             onChange={this.onSearchChange}
-                            placeholder="Search products..."
+                            placeholder="Search products"
                         />
                         <div 
                             className={"dash-sort-button" + (this.state.sortBy === 'views' ? ' dash-sort-button--active' : '')}

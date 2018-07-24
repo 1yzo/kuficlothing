@@ -83,6 +83,12 @@ label {
     border: none;
 }
 
+.dash-product-card--header > input {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 4px;
+}
+
 .dash-sort-button {
     cursor: pointer;
 }
