@@ -142,7 +142,7 @@ label {
 .orders-page__header > div {
     font-size: 2rem;
     margin: 0 1rem;
-    cursor: pointer;
+    padding: 5px 0;
 }
 
 .orders-container {
