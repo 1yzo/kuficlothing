@@ -47,7 +47,7 @@
     position: relative;
     height: 300px;
     width: 225px;
-    box-shadow: 0 20px 50px rgba(48, 48, 46, 0.726);
+    box-shadow: 0 1px 20px rgba(48, 48, 46, 0.726);
     border-radius: 10px;
 }
 

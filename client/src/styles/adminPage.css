@@ -69,6 +69,10 @@ label {
     color: rgba(158, 147, 147, 0.801);
 }
 
+.dash-product-display {
+    padding: 0 10rem;
+}
+
 .dash-product-card {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
@@ -127,4 +131,27 @@ label {
 
 .expander--expanded {
     transform: rotate(180deg);
+}
+
+.orders-page__header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.orders-page__header > div {
+    font-size: 2rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.orders-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.order-card {
+    border: 2px solid #eee;
+    padding: 1rem;
 }

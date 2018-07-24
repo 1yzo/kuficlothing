@@ -26,6 +26,10 @@ class AdminRouter extends React.Component {
         
         
     }
+
+    componentWillUnmount() {
+        this.props.dispatch(toggleAdmin(false));
+    }
     
     render() {
         if (this.state.loaded) {
