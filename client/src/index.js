@@ -30,10 +30,12 @@ store.dispatch(startSetProducts()).then(() => {
     registerServiceWorker();
 });
 
-database.ref('stats/visitors/main').transaction((curr) => {
-    if (curr === null) {
-        return 1
-    } else {
-        return curr + 1;
-    }
-})
+if (!window.location.toString().includes('admin')) {
+    database.ref('stats/visitors/main').transaction((curr) => {
+        if (curr === null) {
+            return 1
+        } else {
+            return curr + 1;
+        }
+    });
+}

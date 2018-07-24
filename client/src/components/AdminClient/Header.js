@@ -12,9 +12,15 @@ class Header extends React.Component {
                 <div className="header">
                     <div className="padding-holder" />
                     <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <NavLink className="header__link" activeClassName="active-link" to="/admin/" exact="true">Dashboard</NavLink>
-                        <NavLink className="header__link" activeClassName="active-link" to="/admin/orders">Orders</NavLink>
-                        <NavLink className="header__link" activeClassName="active-link" to ="/admin/products">Products</NavLink>
+                        <NavLink className="header__link" activeClassName="active-link" to="/admin/" exact>
+                            <i className="material-icons material-icons--admin" >dashboard</i>
+                        </NavLink>
+                        <NavLink className="header__link" activeClassName="active-link" to="/admin/orders">
+                            <i className="material-icons material-icons--admin" alt="orders">flight_takeoff</i>
+                        </NavLink>
+                        <NavLink className="header__link" activeClassName="active-link" to ="/admin/products">
+                            <i className="material-icons material-icons--admin" >store</i>
+                        </NavLink>
                     </div>
                     <div className="padding-holder" />
                 </div>
@@ -23,9 +29,4 @@ class Header extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    shouldRender: !state.config.isAdminPage,
-    cartCount: Object.values(state.cart).length > 0 ? Object.values(state.cart).reduce((acc, curr) => acc + curr.count, 0) : 0
-});
-
-export default withRouter(connect(mapStateToProps)(Header));
+export default withRouter(connect()(Header));
