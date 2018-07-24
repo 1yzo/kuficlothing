@@ -3,16 +3,56 @@ import { connect } from 'react-redux';
 import numeral from 'numeral';
 
 class DashboardProductCard extends React.Component {
+    state= {
+        isExpanded: false,
+    };
+    
+    handleExpand = () => {
+        this.setState((prevState) => ({ isExpanded: !prevState.isExpanded }));
+    }
+
+    getCardExpansion = () => {
+        const { saleStatsBySize } = this.props;
+        const sizeDivs = [];
+        for (let key in saleStatsBySize) {
+            if (saleStatsBySize.hasOwnProperty(key)) {
+                sizeDivs.push(
+                    <div className="expanded-card">
+                        <div></div>
+                        <div>{key.slice(0,1).toUpperCase() + key.slice(1)}</div>
+                        <div style={{ border: '0.5px solid black', width: '2rem' }}></div>
+                        <div>{saleStatsBySize[key].sales}</div>
+                        <div>{numeral(saleStatsBySize[key].revenue / 100).format('$0, 0.00')}</div>
+                        <div></div>
+                    </div>
+                );
+            }
+        }
+        return sizeDivs;
+    }
+    
+    componentDidMount() {
+        const cardExpansion = this.getCardExpansion();
+        this.setState(() => ({ cardExpansion }));
+    }
+    
     render() {
         const { id, image, name, views, totalSales, totalRevenue } = this.props;
         return (
-            <div id={id} className="dash-product-card">
+            <div className="dash-product-card">
                 <img className="image-preview" src={image} alt={name} />
                 <div>{name}</div>
                 <div>{views}</div>
                 <div>{totalSales}</div>
                 <div>{numeral(totalRevenue / 100).format('$0, 0.00')}</div>
-                <i className="material-icons">expand_more</i>
+                {totalSales > 0 && 
+                    <i 
+                        className={"material-icons expander" + (this.state.isExpanded ? ' expander--expanded' : '')}
+                        onClick={this.handleExpand}
+                    >
+                        expand_more
+                    </i>}
+                {this.state.isExpanded && this.getCardExpansion()}
             </div>
         );
     }

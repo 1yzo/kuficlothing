@@ -78,6 +78,20 @@ label {
     padding-right: 1rem;
 }
 
+.expanded-card {
+    height: 10rem;
+    justify-self: start;
+    width: 100%;
+    grid-column: 1 / end;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.expanded-card > div {
+    justify-self: center;
+}
+
 .dash-product-card--header {
     margin-bottom: 1rem;
     border: none;
@@ -105,7 +119,12 @@ label {
     justify-self: center;
 }
 
-.dash-product-card > i {
+.expander {
     justify-self: end;
     cursor: pointer;
+    transition: transform 200ms ease-out;
+}
+
+.expander--expanded {
+    transform: rotate(180deg);
 }

@@ -13,13 +13,13 @@ class Header extends React.Component {
                     <div className="padding-holder" />
                     <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <NavLink className="header__link" activeClassName="active-link" to="/admin/" exact>
-                            <i className="material-icons material-icons--admin" >dashboard</i>
+                            <i className="material-icons material-icons--admin" title="dashboard">dashboard</i>
                         </NavLink>
                         <NavLink className="header__link" activeClassName="active-link" to="/admin/orders">
-                            <i className="material-icons material-icons--admin" alt="orders">flight_takeoff</i>
+                            <i className="material-icons material-icons--admin" title="orders">flight_takeoff</i>
                         </NavLink>
                         <NavLink className="header__link" activeClassName="active-link" to ="/admin/products">
-                            <i className="material-icons material-icons--admin" >store</i>
+                            <i className="material-icons material-icons--admin" title="products">store</i>
                         </NavLink>
                     </div>
                     <div className="padding-holder" />

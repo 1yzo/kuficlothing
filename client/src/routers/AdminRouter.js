@@ -10,6 +10,7 @@ import { startSetOrders } from '../actions/orders';
 import { startSetProductStats, startSetVisitorStats } from '../actions/stats';
 import LoadingPage from '../components/LoadingPage';
 import '../styles/adminPage.css';
+import { toggleAdmin } from '../actions/config';
 
 class AdminRouter extends React.Component {
     state = {
@@ -17,6 +18,7 @@ class AdminRouter extends React.Component {
     };
     
     componentDidMount() {
+        this.props.dispatch(toggleAdmin(true));
         this.props.dispatch(startSetOrders())
             .then(() => this.props.dispatch(startSetProductStats()))
                 .then(() => this.props.dispatch(startSetVisitorStats()))
