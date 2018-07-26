@@ -151,7 +151,31 @@ label {
     grid-gap: 1rem;
 }
 
+.orders-container  .material-icons {
+    cursor: pointer;
+    transition: transform 200ms ease-out;
+}
+
+.orders-container .material-icons:hover {
+    transform: scale(1.2);
+}
+
 .order-card {
+    color: black;
+    text-decoration: none;
+    position: relative;
     border: 2px solid #eee;
     padding: 1rem;
+    cursor: pointer;
+    transition: background 200ms ease-in-out;
+}
+
+.order-card:hover {
+    background: rgba(209, 209, 209, 0.37);
+}
+
+.order-info {
+    color: rgba(158, 147, 147, 0.801);
+    font-size: 15px;
+    margin-top: 3rem;
 }
