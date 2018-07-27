@@ -16,7 +16,7 @@ class Header extends React.Component {
                             <i className="material-icons material-icons--admin" title="dashboard">dashboard</i>
                         </NavLink>
                         <NavLink className="header__link" activeClassName="active-link" to="/admin/orders">
-                            <i className="material-icons material-icons--admin" title="orders">flight_takeoff</i>
+                            <i className="material-icons material-icons--admin" title="orders">assignment</i>
                         </NavLink>
                         <NavLink className="header__link" activeClassName="active-link" to ="/admin/products">
                             <i className="material-icons material-icons--admin" title="products">store</i>

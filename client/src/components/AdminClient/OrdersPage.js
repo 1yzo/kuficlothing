@@ -16,7 +16,6 @@ class OrdersPage extends React.Component {
     }
 
     handleOrderCardSelect = (id) => {
-        console.log(`setting id to ${id}`);
         this.setState(() => ({ selectedOrderId: id }));
     }
     

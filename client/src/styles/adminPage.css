@@ -184,7 +184,8 @@ label {
     position: relative;
     padding-left: 20rem;
     padding-right: 20rem;
-    padding-top: 20rem;
+    padding-top: 17rem;
+    display: flex;
 }
 
 .back-button {
@@ -193,4 +194,70 @@ label {
     top: 100px;
     left: 200px;
     font-size: 4rem;
+    transition: left 300ms ease-out;
+}
+
+.back-button:hover {
+    left: 195px;
+}
+
+.address-box {
+    padding: 1rem;
+    width: 25rem;
+    max-height: 90px;
+    margin-right: 3rem;
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-list {
+    flex: 1;
+    border: 2px solid #eee;
+    margin-bottom: 2rem;
+    border-bottom: none;
+}
+
+.cart-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #eee;
+    padding-right: 1rem;
+}
+
+.cart-total-container {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    border-bottom: 2px solid #eee;
+    padding-right: 1rem;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 20rem;
+}
+
+.sub-label {
+    color: rgba(158, 147, 147, 0.801);    
+}
+
+.stripe-button {
+    text-decoration: none;
+    background: #eee;
+    display: flex;
+    align-items: center;    
+    padding: 1rem;
+    color: #6772e5;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+.stripe-button:hover {
+    background: rgba(204, 204, 204, 0.973);
 }
