@@ -12,8 +12,7 @@ import { startSetProductStats, startSetVisitorStats } from '../actions/stats';
 import LoadingPage from '../components/LoadingPage';
 import '../styles/adminPage.css';
 import { toggleAdmin } from '../actions/config';
-import OrderInfoPage from '../components/AdminClient/OrderInfoPage';
-
+import ProductFormPage from '../components/AdminClient/ProductFormPage';
 class AdminRouter extends React.Component {
     state = {
         loaded: false
@@ -41,6 +40,7 @@ class AdminRouter extends React.Component {
                             <Route path='/admin/' component={AdminDashboard} exact={true}/>
                             <Route path='/admin/orders' component={OrdersPage} />
                             <Route path='/admin/products' component={ProductsPage} />
+                            <Route path='/admin/productform/:productId' component={ProductFormPage} />
                             <Route component={NotFoundPage} />
                         </Switch>
                     </div>

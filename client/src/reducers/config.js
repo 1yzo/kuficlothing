@@ -1,6 +1,6 @@
 const defaultConfigState = {
     isAdminPage: false,
-    checkoutErrorCount: 0
+    checkoutErrorCount: 0,
 };
 
 export default (state = defaultConfigState, action) => {

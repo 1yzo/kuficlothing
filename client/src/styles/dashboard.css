@@ -28,7 +28,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
 }
 
 .title-container--overlap {
@@ -86,7 +86,7 @@
 
 .slick-prev {
     left: 10px;
-    z-index: 5;
+    z-index: 1;
 }
 .slick-prev::before {
     color: black;

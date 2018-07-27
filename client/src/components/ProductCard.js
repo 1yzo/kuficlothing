@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import numeral from 'numeral';
 
 const ProductCard = ({ name, image, price, stock }) => {
     return (
-        <Link className="card-holder" to={`/products/${name}`} params={{ name, image, price }}>
+        <Link className="card-holder" to={`/products/${name}`}>
             <div className="product-card">
                 <img src={`${image}`} alt={`${name}`} />
                 {(stock.small < 1 && stock.medium < 1 && stock.large < 1 && stock.xLarge < 1) &&
@@ -13,7 +14,7 @@ const ProductCard = ({ name, image, price, stock }) => {
                 }
                 <div className="overlay">
                     <div>{name}</div>
-                    <div>${price / 100}</div>
+                    <div>{numeral(price / 100).format('$0, 0.00')}</div>
                 </div>
             </div>
         </Link>

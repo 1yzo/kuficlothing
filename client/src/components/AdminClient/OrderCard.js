@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import moment from 'moment';
 import { startToggleShippedStatus } from '../../actions/orders';
 
 class OrderCard extends React.Component {
-    handleShippingClick = () => {
+    handleShippingClick = (e) => {
+        e.stopPropagation();
+        
         const { id } = this.props;
         this.props.toggleShipping(id); 
     }
@@ -37,4 +37,4 @@ const mapDispatchToProps = (dispatch) => ({
     toggleShipping: (id) => dispatch(startToggleShippedStatus(id))
 });
 
-export default withRouter(connect(undefined, mapDispatchToProps)(OrderCard));
+export default connect(undefined, mapDispatchToProps)(OrderCard);

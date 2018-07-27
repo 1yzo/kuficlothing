@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startAddProduct } from '../../actions/products';
+import { startAddProduct, startEditProduct } from '../../actions/products';
 
-class ProductForm extends React.Component {
+class ProductFormPage extends React.Component {
     state = {
         name: this.props.product ? this.props.product.name : '',
         category: this.props.product ? this.props.product.category : '',
@@ -79,23 +79,23 @@ class ProductForm extends React.Component {
     
     handleSubmit = (e) => {
         e.preventDefault();
+        
         if (this.props.product) {
-            this.props.onSubmit(this.props.product.id, {
+            this.props.dispatch(startEditProduct(this.props.product.id, {
                 ...this.state,
                 price: Number(this.state.price) * 100
-            });
+            })).then(() => this.props.history.push('/admin/products'));
         } else {
-            this.props.onSubmit({
+            this.props.dispatch(startAddProduct({
                 ...this.state,
                 price: Number(this.state.price) * 100
-            })
+            })).then(() => this.props.history.push('/admin/products'));
         }
-        this.props.closeForm();
     }
     
     render() {
         return (
-            <div>
+            <div className="page" style={{ paddingLeft: '20rem', paddingRight: '20rem' }}>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
@@ -173,11 +173,15 @@ class ProductForm extends React.Component {
                     >
                         Accept
                     </button>
-                    <button onClick={this.props.closeForm}>Cancel</button>
+                    <button onClick={() => this.props.history.push('/admin/products')}>Cancel</button>
                 </form>
             </div>
         );
     }
 }
 
-export default connect()(ProductForm);
+const mapStateToProps = (state, props) => ({
+    product: state.products.find(({ id }) => id === props.match.params.productId),
+});
+
+export default connect(mapStateToProps)(ProductFormPage);
