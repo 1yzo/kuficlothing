@@ -10,12 +10,13 @@ label {
     transition: transform 300ms ease-in-out;
 }
 
-.product-form > div, img {
+.product-form > div {
     margin-bottom: 3rem;
 }
 
-.product-form img {
+.product-form > img {
     margin-left: 2rem;
+    margin-bottom: 3rem;
 }
 
 .add-product-button:hover {
