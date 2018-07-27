@@ -179,3 +179,18 @@ label {
     font-size: 15px;
     margin-top: 3rem;
 }
+
+.order-page {
+    position: relative;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-top: 20rem;
+}
+
+.back-button {
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    font-size: 4rem;
+}
