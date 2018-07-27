@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startAddProduct, startEditProduct } from '../../actions/products';
+import { startAddProduct, startEditProduct, startRemoveProduct } from '../../actions/products';
 
 class ProductFormPage extends React.Component {
     state = {
@@ -79,7 +79,7 @@ class ProductFormPage extends React.Component {
     
     handleSubmit = (e) => {
         e.preventDefault();
-        
+
         if (this.props.product) {
             this.props.dispatch(startEditProduct(this.props.product.id, {
                 ...this.state,
@@ -92,11 +92,16 @@ class ProductFormPage extends React.Component {
             })).then(() => this.props.history.push('/admin/products'));
         }
     }
+
+    deleteProduct = (e) => {
+        e.preventDefault();
+        this.props.dispatch(startRemoveProduct(this.props.product.id)).then(() => this.props.history.push('/admin/products'));
+    }
     
     render() {
         return (
             <div className="page" style={{ paddingLeft: '20rem', paddingRight: '20rem' }}>
-                <form onSubmit={this.handleSubmit}>
+                <form className="product-form" onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
                         <input type="text" onChange={this.onChange} id="name" value={this.state.name} />
@@ -167,13 +172,19 @@ class ProductFormPage extends React.Component {
                         </div>
                     }
                     </div>
-                    <button 
-                        onClick={this.handleSubmit} 
-                        disabled={!(this.state.name && this.state.category && this.state.image && this.state.price)}
-                    >
-                        Accept
-                    </button>
-                    <button onClick={() => this.props.history.push('/admin/products')}>Cancel</button>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div>
+                            <button 
+                                onClick={this.handleSubmit} 
+                                disabled={!(this.state.name && this.state.category && this.state.image && this.state.price)}
+                            >
+                                Accept
+                            </button>
+                            <button onClick={() => this.props.history.push('/admin/products')}>Cancel</button>
+                        </div>
+                        {this.props.product && 
+                            <button className="delete-product-button" onClick={this.deleteProduct}>Delete</button>}
+                    </div>
                 </form>
             </div>
         );

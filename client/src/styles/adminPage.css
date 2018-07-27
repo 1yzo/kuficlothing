@@ -10,6 +10,14 @@ label {
     transition: transform 300ms ease-in-out;
 }
 
+.product-form > div, img {
+    margin-bottom: 3rem;
+}
+
+.product-form img {
+    margin-left: 2rem;
+}
+
 .add-product-button:hover {
     transform: scale(1.5);
 }
@@ -22,6 +30,12 @@ label {
 .image-preview {
     height: 100px;
     width: 100px;
+}
+
+.delete-product-button {
+    margin-left: 10rem;
+    justify-self: end;
+    background: rgba(255, 0, 0, 0.425);
 }
 
 .dashboard-stats {
@@ -276,6 +290,7 @@ label {
 
 .products-product__info-price {
     margin-top: 1rem;
+    color: rgba(158, 147, 147, 0.801);
 }
 
 .products-search {
