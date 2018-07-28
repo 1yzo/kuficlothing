@@ -51,7 +51,7 @@
 }
 
 .main-slider {
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .slide-holder {
@@ -65,7 +65,7 @@
     outline: none;
 }
 
-.main-slider img {
+.slide-image {
     border-radius: 10px;
     position: absolute;
     left: 50%;

@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import "../../node_modules/slick-carousel/slick/slick.css"; 
+// import "../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 import '../styles/dashboard.css';
 import '../styles/pages.css';
+import ProductCard from './ProductCard';
 
 class DashboardPage extends React.Component {
     state = { isOverlap: false }
@@ -84,12 +85,17 @@ class DashboardPage extends React.Component {
                         <div key={i} className="slide-holder">
                             {
                                 <img 
-                                    src={item.image}
-                                    alt={item.name}
+                                    className="slide-image"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         this.props.history.push(`/products/${item.name}`)
                                     }}
+                                    onTouchTap={(e) => {
+                                        e.stopPropagation();
+                                        this.props.history.push(`/products/${item.name}`)
+                                    }}
+                                    src={item.image}
+                                    alt={item.name}
                                 />
                             }
                         </div>
