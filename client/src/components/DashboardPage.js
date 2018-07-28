@@ -7,13 +7,12 @@ import Slider from 'react-slick';
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 import '../styles/dashboard.css';
 import '../styles/pages.css';
-import ProductCard from './ProductCard';
+import Tappable from 'react-tappable';
 
 class DashboardPage extends React.Component {
     state = { isOverlap: false }
     
     handleScroll = () => {
-        console.log(this.titleRef.offsetTop)
         if (window.pageYOffset > this.titleRef.offsetTop - 150) {
             this.setState(() => ({ isOverlap: true }));
         } else {
@@ -83,21 +82,17 @@ class DashboardPage extends React.Component {
                 <Slider className="main-slider"{...settings}>
                     {this.props.featuredItems.map((item, i) => (
                         <div key={i} className="slide-holder">
-                            {
+                            <Tappable onTap={() => this.props.history.push(`/products/${item.name}`)}>
                                 <img 
                                     className="slide-image"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         this.props.history.push(`/products/${item.name}`)
                                     }}
-                                    onTouchTap={(e) => {
-                                        e.stopPropagation();
-                                        this.props.history.push(`/products/${item.name}`)
-                                    }}
                                     src={item.image}
                                     alt={item.name}
                                 />
-                            }
+                            </Tappable>
                         </div>
                     ))}
                 </Slider>
