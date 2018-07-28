@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 // import "../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
@@ -81,14 +82,14 @@ class DashboardPage extends React.Component {
                 </div>
                 <Slider className="main-slider"{...settings}>
                     {this.props.featuredItems.map((item, i) => (
-                        <div key={i} className="slide-holder" onClick={() => this.props.history.push(`/products/${item.name}`)}>
+                        <Link key={i} className="slide-holder" to={`/products/${item.name}`}>
                             {
                                 <img 
                                     src={item.image}
                                     alt={item.name}
                                 />
                             }
-                        </div>
+                        </Link>
                     ))}
                 </Slider>
             </div>
