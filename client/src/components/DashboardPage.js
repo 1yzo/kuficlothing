@@ -81,11 +81,9 @@ class DashboardPage extends React.Component {
                 </div>
                 <Slider className="main-slider"{...settings}>
                     {this.props.featuredItems.map((item, i) => (
-                        <div key={i} className="slide-holder">
+                        <div key={i} className="slide-holder" onClick={() => this.props.history.push(`/products/${item.name}`)}>
                             {
                                 <img 
-                                    onClick={() => this.props.history.push(`/products/${item.name}`)}
-                                    onTouchEnd={() => this.props.history.push(`/products/${item.name}`)}
                                     src={item.image}
                                     alt={item.name}
                                 />
