@@ -87,10 +87,6 @@ class DashboardPage extends React.Component {
                                 <img 
                                     src={item.image}
                                     alt={item.name}
-                                    onTouchEnd={(e) => {
-                                        e.stopPropagation();
-                                        this.props.history.push(`/products/${item.name}`)
-                                    }}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         this.props.history.push(`/products/${item.name}`)
