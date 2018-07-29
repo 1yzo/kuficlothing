@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase';
+import {  startLogin } from '../../actions/config';
 
 class LoginPage extends React.Component {
     state = {
@@ -22,9 +24,20 @@ class LoginPage extends React.Component {
         e.preventDefault;
         const { email, password } = this.state; 
         auth.signInWithEmailAndPassword(email, password)
+            .then((res) => { 
+                this.props.dispatch(startLogin(res.user.uid))
+                    .then(() => this.props.history.push('/admin/dashboard'));
+            })
             .catch(({ message }) => this.setState(() => ({ error: message   })));
 
     }     
+
+    componentDidMount() {
+        const currentUser = auth.currentUser;
+        if (currentUser) {
+            this.props.history.push('/admin/dashboard');
+        }
+    }
     
     render() {
         return (
@@ -52,4 +65,4 @@ class LoginPage extends React.Component {
     }
 }
 
-export default LoginPage;
+export default connect()(LoginPage);

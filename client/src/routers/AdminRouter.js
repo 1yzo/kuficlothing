@@ -26,7 +26,7 @@ class AdminRouter extends React.Component {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 this.props.dispatch(login(user.uid));
-                this.props.history.push('/admin/dashboard');
+                // this.props.history.push('/admin/dashboard');
             } else {
                 this.props.dispatch(logout());
                 this.props.history.push('/admin/');

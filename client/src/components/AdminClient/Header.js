@@ -33,11 +33,15 @@ class Header extends React.Component {
                         </NavLink>
                     </div>
                     <div className="padding-holder" />
-                    <button className="logout-button" onClick={this.handleLogoutClick}>Logout</button>
+                    {this.props.isAuthenticated && <button className="logout-button" onClick={this.handleLogoutClick}>Logout</button>}
                 </div>
             </div>
         );
     }
 }
 
-export default withRouter(connect()(Header));
+const mapStateToProps = (state) => ({
+    isAuthenticated: !!state.config.user
+});
+
+export default withRouter(connect(mapStateToProps)(Header));
