@@ -5,10 +5,6 @@ import numeral from 'numeral';
 
 class OrderInfoPage extends React.Component {
     state = { totalPrice: 0 }
-    
-    onBackClick = () => {
-        this.props.setSelectedOrderId(undefined);
-    }
 
     formatName = (name) => {
         const arr = name.split(' ');
@@ -24,15 +20,10 @@ class OrderInfoPage extends React.Component {
         );
     }
     
-    componentWillUnmount = () => {
-        this.props.setSelectedOrderId(undefined);
-    }
-    
     render() {
         const { addressInfo , cart} = this.props.order;
         return (
             <div className="page order-page">
-                <i className="material-icons back-button" onClick={this.onBackClick}>arrow_back</i>
                 <div className="address-box">
                     <div>{this.props.order.customerName}</div>
                     <div>{addressInfo.billing_address_line1}</div>
@@ -88,7 +79,7 @@ class OrderInfoPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    order: state.orders.find((order) => order.id === props.id),
+    order: state.orders.find((order) => order.id === props.match.params.orderId),
     products: state.products
 });
 

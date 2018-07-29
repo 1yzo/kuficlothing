@@ -16,6 +16,7 @@ import ProductFormPage from '../components/AdminClient/ProductFormPage';
 import LoginPage from '../components/AdminClient/LoginPage';
 import { auth } from '../firebase/firebase';
 import AdminRoute from './AdminRoute';
+import OrderInfoPage from '../components/AdminClient/OrderInfoPage';
 
 class AdminRouter extends React.Component {
     state = {
@@ -26,7 +27,6 @@ class AdminRouter extends React.Component {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 this.props.dispatch(login(user.uid));
-                // this.props.history.push('/admin/dashboard');
             } else {
                 this.props.dispatch(logout());
                 this.props.history.push('/admin/');
@@ -52,10 +52,11 @@ class AdminRouter extends React.Component {
                         <Header />
                         <Switch>
                             <Route path="/admin/" component={LoginPage} exact />
-                            <AdminRoute path='/admin/dashboard' component={AdminDashboard} />
-                            <AdminRoute path='/admin/orders' component={OrdersPage} />
-                            <AdminRoute path='/admin/products' component={ProductsPage} />
-                            <AdminRoute path='/admin/productform/:productId' component={ProductFormPage} />
+                            <AdminRoute path="/admin/dashboard" component={AdminDashboard} />
+                            <AdminRoute path="/admin/orders" component={OrdersPage} />
+                            <AdminRoute path="/admin/order/:orderId" component={OrderInfoPage} />
+                            <AdminRoute path="/admin/products" component={ProductsPage} />
+                            <AdminRoute path="/admin/productform/:productId" component={ProductFormPage} />
                             <AdminRoute component={NotFoundPage} />
                         </Switch>
                     </div>

@@ -38,7 +38,7 @@ class PaymentCheckout extends React.Component {
                     })),
                     shipped: false,
                     date: moment().valueOf()
-                }).then(() => {
+                }).then((newOrderRef) => {
                     for (let item of this.props.cart) {
                         database.ref(`stats/${item.id}/${item.size}`).transaction((current) => {
                             if (current === null) {
@@ -60,17 +60,17 @@ class PaymentCheckout extends React.Component {
                                 this.props.dispatch(clearItems());
                                 this.props.history.push('/');
                             });
-                        })
+                        });
                     }
+                    fetch('api/email', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            customerName: addressInfo.billing_name,
+                            orderId: newOrderRef.key
+                        }),
+                        headers: { 'content-type': 'application/json' }
+                    })
                 });
-            }).then(() => {
-                fetch('api/email', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        customerName: addressInfo.billing_name
-                    }),
-                    headers: { 'content-type': 'application/json' }
-                })
             });
     }
     

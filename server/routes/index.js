@@ -19,6 +19,7 @@ router.post('/charge', (req, res, next) => {
 
 
 router.post('/email', (req, res) => {
+    const { customerName, orderId } = req.body;
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -29,8 +30,8 @@ router.post('/email', (req, res) => {
     const mailOptions = {
         from: 'spritz900@gmail.com',
         to: 'iyzo.saab@gmail.com',
-        subject: `New Kufi Clothing order from ${req.body.customerName}`,
-        text: 'View on dashboard - kuficlothing.herokuapp.com/#/admin/orders'
+        subject: `New Kufi Clothing order from ${customerName}`,
+        text: `View on dashboard - kuficlothing.herokuapp.com/#/admin/order/${orderId}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
