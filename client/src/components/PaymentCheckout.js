@@ -63,6 +63,14 @@ class PaymentCheckout extends React.Component {
                         })
                     }
                 });
+            }).then(() => {
+                fetch('api/email', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        customerName: addressInfo.billing_name
+                    }),
+                    headers: { 'content-type': 'application/json' }
+                })
             });
     }
     
