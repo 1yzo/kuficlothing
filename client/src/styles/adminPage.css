@@ -1,3 +1,14 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 30rem;
+}
+
+.logout-button {
+    position: absolute;
+    right: 10rem;
+}
+
 label {
     margin: 0 1rem 1rem;
 }

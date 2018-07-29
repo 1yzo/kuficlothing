@@ -14,10 +14,11 @@ class DashboardProductCard extends React.Component {
     getCardExpansion = () => {
         const { saleStatsBySize } = this.props;
         const sizeDivs = [];
+        let indexForKey = 0;
         for (let key in saleStatsBySize) {
             if (saleStatsBySize.hasOwnProperty(key)) {
                 sizeDivs.push(
-                    <div className="expanded-card">
+                    <div key={indexForKey} className="expanded-card">
                         <div></div>
                         <div>{key.slice(0,1).toUpperCase() + key.slice(1)}</div>
                         <div style={{ border: '0.5px solid black', width: '2rem' }}></div>
@@ -27,6 +28,7 @@ class DashboardProductCard extends React.Component {
                     </div>
                 );
             }
+            indexForKey++;
         }
         return sizeDivs;
     }
