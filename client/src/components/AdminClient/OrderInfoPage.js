@@ -23,7 +23,7 @@ class OrderInfoPage extends React.Component {
     render() {
         const { addressInfo , cart} = this.props.order;
         return (
-            <div className="page order-page">
+            <div className="page--admin">
                 <div className="address-box">
                     <div>{this.props.order.customerName}</div>
                     <div>{addressInfo.billing_address_line1}</div>
@@ -39,7 +39,7 @@ class OrderInfoPage extends React.Component {
                                     src={this.props.products.find((product) => product.id === item.id).image}
                                     alt={item.name}
                                 />
-                                <div>{this.formatName(item.name)}</div>
+                                <div className="cart-list__item__name">{this.formatName(item.name)}</div>
                                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <div>{item.count} @ {numeral(item.price / 100).format('$0, 0.00')}</div>
                                     <div

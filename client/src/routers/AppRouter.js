@@ -9,6 +9,7 @@ import ShoppingCartPage from '../components/ShoppingCartPage';
 import NotFoundPage from './NotFoundPage';
 import MissionPage from '../components/MissionPage';
 import AdminRouter from './AdminRouter';
+import ContactPage from '../components/ContactPage';
 
 const AppRouter = () => (
     <HashRouter>
@@ -18,6 +19,7 @@ const AppRouter = () => (
                 <Route path="/" component={DashboardPage} exact={true} />
                 <Route path="/shop"  component={ShopPage} />
                 <Route path="/products/:productName" component={ProductInfoPage} />
+                <Route path="/contact" component={ContactPage} />
                 <Route path="/cart" component={ShoppingCartPage} />
                 <Route path="/mission" component={MissionPage} />
                 <Route path="/admin" component={AdminRouter} />

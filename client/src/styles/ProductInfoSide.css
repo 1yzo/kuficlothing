@@ -5,6 +5,7 @@
     align-self: start;
     border-radius: 10px;
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .button-wrapper {
@@ -22,8 +23,18 @@ h1 {
 
 .price {
     font-size: 3rem;
-    margin-bottom: 10rem;
     color: #202237;
+}
+
+.soldout-tag {
+    color: white;
+    font-size: 1.8rem;
+    background: rgba(247, 79, 79, 0.925);
+    width: 11rem;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 2rem;
 }
 
 .add-button {
@@ -112,19 +123,24 @@ h1 {
     }
   }
 
-  .error {
-      font-size: 2rem;
-  }
+.error {
+    font-size: 2rem;
+}
 
   @media (max-width: 611px) {
-      h1 {
-          font-size: 2.5rem;
-          text-align: center;
-      }
-      .price {
-          text-align: center;
-          margin-bottom: 2rem;
-      }
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .price {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .soldout-tag {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
   }
 
   @media (max-width: 945px){

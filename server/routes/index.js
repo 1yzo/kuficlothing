@@ -31,7 +31,7 @@ router.post('/email', (req, res) => {
         from: 'spritz900@gmail.com',
         to: 'iyzo.saab@gmail.com',
         subject: `New Kufi Clothing order from ${customerName}`,
-        text: `View on dashboard - kuficlothing.herokuapp.com/#/admin/order/${orderId}`
+        text: `View order - kuficlothing.herokuapp.com/#/admin/order/${orderId}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

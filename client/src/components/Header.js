@@ -39,12 +39,19 @@ class Header extends React.Component {
                                 SHOP
                             </NavLink>,
                             <NavLink
-                                    onClick={this.triggerHam} 
-                                    className="header__link header__link--ham"
-                                    to="/mission" activeClassName="active-link"
-                                >
-                                    MISSION
-                                </NavLink>
+                                onClick={this.triggerHam} 
+                                className="header__link header__link--ham"
+                                to="/mission" activeClassName="active-link"
+                            >
+                                MISSION
+                            </NavLink>,
+                            <NavLink
+                                onClick={this.triggerHam} 
+                                className="header__link header__link--ham"
+                                to="/contact" activeClassName="active-link"
+                            >
+                                CONTACT
+                            </NavLink>
                         ]}
                     />
                     <div className="header">
@@ -70,6 +77,12 @@ class Header extends React.Component {
                                     to="/mission" activeClassName="active-link"
                                 >
                                     MISSION
+                                </NavLink>
+                                <NavLink
+                                    className="header__link desktop-only"
+                                    to="/contact" activeClassName="active-link"
+                                >
+                                    CONTACT
                                 </NavLink>
                             </div>
                             <NavLink className="logo__link" to="/">

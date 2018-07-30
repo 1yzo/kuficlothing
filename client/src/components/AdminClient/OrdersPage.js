@@ -17,7 +17,7 @@ class OrdersPage extends React.Component {
     
     render() {
         return (
-            <div className="page" style={{ paddingLeft: '20rem', paddingRight: '20rem' }}>
+            <div className="page--admin">
                 <div className="orders-page__header">
                     <div 
                         className={"dash-sort-button" + (this.state.filterBy === 'unshipped' ? ' dash-sort-button--active' : '')}

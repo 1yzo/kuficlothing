@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/cart';
 import '../styles/ProductInfoSide.css';
+import { access } from 'fs';
 
 class ProductInfoSide extends React.Component {
     state = {
@@ -40,7 +41,9 @@ class ProductInfoSide extends React.Component {
             <div className="product-info-side">
                 <h1>{this.props.product.name}</h1>
                 <div className="price">${this.props.product.price / 100}</div>
-                <div style={{ height: '2px', width: '100%', background: 'rgb(185, 185, 185)' }} />
+                {Object.values(this.props.product.stock).reduce((acc, curr) => acc + curr, 0) < 1 &&
+                 <div className="soldout-tag">SOLD OUT</div>}
+                <div style={{ height: '2px', width: '100%', background: 'rgb(185, 185, 185)', marginTop: '10rem' }} />
                 <div className="sizes-container">
                     <button
                         className="button-wrapper"
