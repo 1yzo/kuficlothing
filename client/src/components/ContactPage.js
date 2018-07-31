@@ -1,11 +1,13 @@
 import React from 'react';
+import '../styles/ProductInfoSide.css';
 
 class ContactPage extends React.Component {
     state = {
         name: '',
         email: '',
         message: '',
-        error: ''
+        error: '',
+        loading: false
     }
 
     onChange = (e) => {
@@ -20,16 +22,20 @@ class ContactPage extends React.Component {
 
     onSubmit = () => {
         if (this.state.name && this.state.email && this.state.message) {
+            this.setState(() => ({ loading: true }));
             fetch('api/contact', {
                 method: 'post',
                 body: JSON.stringify({ ...this.state }),
                 headers: { 'content-type': 'application/json' }
+            }).then(() => {
+                this.setState(() => ({
+                    name: '',
+                    email: '',
+                    message: 'Thank you ! We will get back to you as soon as possible 😄',
+                    error: '',
+                    loading: false
+                }));
             });
-            this.setState(() => ({
-                name: '',
-                email: '',
-                message: ''
-            }));
         } else {
             this.setState(() => ({ error: 'All fields are required' }));
         }
@@ -66,7 +72,10 @@ class ContactPage extends React.Component {
                         maxLength="1000"
                     />
                     {this.state.error && <div className="error">{this.state.error}</div>}
-                    <button className="contact-form__button" onClick={this.onSubmit}>Send</button>
+                    <button className="contact-form__button" onClick={this.onSubmit}>
+                        {!this.state.loading && 'Send'}
+                        {this.state.loading && <div className="spinner--small" />}  
+                    </button>
                 </div>
             </div>
         );

@@ -114,6 +114,21 @@ h1 {
     border-radius: 100%;
   }
 
+  .spinner--small {
+    height: 15px;
+    width: 15px;
+    margin: 94px auto 0 auto;
+    position: absolute;
+    top: -90px;
+    left: 48%;
+    animation: rotation .6s infinite linear;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    border-top: 3px solid rgba(0, 0, 0, 0.8);
+    border-radius: 100%;
+  }
+
   @keyframes rotation {
     from {
       transform: rotate(0deg);
