@@ -14,12 +14,14 @@ class ProductsPage extends React.Component {
     
     render() {
         return (
-            <div className="page" style={{ paddingLeft: '20rem', paddingRight: '20rem' }}>
-                <div style={{ display: 'flex', marginBottom: '3rem' }}>
-                    <div style={{ fontSize: '3rem' }}>Products</div>
-                    <Link to="/admin/productform/new-product" className="add-product-button">
-                        <i className="material-icons">add</i>
-                    </Link>
+            <div className="page page--admin">
+                <div className="products-header">
+                    <div style={{ display: 'flex' }}>
+                        <div style={{ fontSize: '3rem' }}>Products</div>
+                        <Link to="/admin/productform/new-product" className="add-product-button">
+                            <i className="material-icons">add</i>
+                        </Link>
+                    </div>
                     <input 
                         className="products-search"
                         type="text"

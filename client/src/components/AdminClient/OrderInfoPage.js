@@ -23,7 +23,7 @@ class OrderInfoPage extends React.Component {
     render() {
         const { addressInfo , cart} = this.props.order;
         return (
-            <div className="page--admin">
+            <div className="page--admin order-page">
                 <div className="address-box">
                     <div>{this.props.order.customerName}</div>
                     <div>{addressInfo.billing_address_line1}</div>
