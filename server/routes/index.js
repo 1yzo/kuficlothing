@@ -18,15 +18,17 @@ router.post('/charge', (req, res, next) => {
 });
 
 
+const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'spritz900@gmail.com',
+        pass: 'Osman97009700'
+    }
+});
+
 router.post('/email', (req, res) => {
     const { customerName, orderId } = req.body;
-    const transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'spritz900@gmail.com',
-            pass: 'Osman97009700'
-        }
-    });
+
     const mailOptions = {
         from: 'spritz900@gmail.com',
         to: 'iyzo.saab@gmail.com',
@@ -40,6 +42,23 @@ router.post('/email', (req, res) => {
             res.json({ hello: 'something went wrong' });
         } else {
             res.json(info.response);
+        }
+    });
+});
+
+router.post('/contact', (req, res) => {
+    const { name, email, message } = req.body;
+    
+    transporter.sendMail({
+        from: email,
+        to: 'iyzo.saab@gmail.com',
+        subject: `Kufi Clothing Message From ${name}`,
+        text: message + '\n - from ' + email
+    }, (error, info) => {
+        if (error) {
+            console.log(error);
+        } else {
+            res.json(info.message);
         }
     });
 });

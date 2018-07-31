@@ -351,6 +351,9 @@ label {
    .cart-list__item__name {
        text-align: center;
    }
+   .dash-product-display {
+       padding: 0;
+   }
 }
 
 @media (max-width: 553px) {
@@ -359,5 +362,8 @@ label {
         left: 50%;
         transform: translateX(-65%);
         padding: 1px;
+    }
+    .dashboard-stats {
+        font-size: 2rem;
     }
 }
