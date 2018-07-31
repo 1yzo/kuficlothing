@@ -12,7 +12,7 @@ const ProductCard = ({ name, image, price, stock }) => {
                         SOLD OUT
                     </div>
                 }
-                <div className="overlay">
+                <div className="overlay overlay--info">
                     <div>{name}</div>
                     <div>{numeral(price / 100).format('$0, 0.00')}</div>
                 </div>
