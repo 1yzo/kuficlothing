@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import ShopPage from '../components/ShopPage';
 import Header from '../components/Header';
