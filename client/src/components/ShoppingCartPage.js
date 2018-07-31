@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/shoppingCart.css'
-import { removeItem } from '../actions/cart';
 import CartDisplay from './CartDisplay';
 
 class ShoppingCartPage extends React.Component {

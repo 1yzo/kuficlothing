@@ -58,7 +58,7 @@ class PaymentCheckout extends React.Component {
                             }, (error, committed, snapshot) => {
                                 this.props.dispatch(editProductStock(item.id, item.size, snapshot.val()));
                                 this.props.dispatch(clearItems());
-                                this.props.history.push('/');
+                                // this.props.history.push('/');
                             });
                         });
                     }
