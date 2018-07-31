@@ -70,12 +70,18 @@ h1 {
     flex-basis: 5rem;
 }
 
+.material-icons {
+    user-select: none;
+}
+
 @media (max-width: 611px) {
     .padding-holder {
         flex-basis: 2rem;
     }
 }
 
-.material-icons {
-    user-select: none;
+@media (min-width: 818px) {
+    .hamburger-trigger {
+        display: none;
+    }
 }

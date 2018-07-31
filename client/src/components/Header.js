@@ -58,7 +58,7 @@ class Header extends React.Component {
                         <div className="padding-holder" />
                         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                             <div style={{ display:'flex' }}>
-                                <div className="hamburger-trigger mobile-only">
+                                <div className="hamburger-trigger">
                                     <i className="material-icons hamburger-trigger" onClick={this.triggerHam}>menu</i>
                                 </div>
                                 <NavLink 
