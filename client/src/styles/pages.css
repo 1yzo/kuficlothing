@@ -96,6 +96,7 @@
     display: flex;
     flex-direction: column;
     width: 60rem;
+    animation: load 1s ease-in-out 1;        
 }
 
 .contact-form__info {
