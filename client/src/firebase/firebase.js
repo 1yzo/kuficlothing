@@ -3,12 +3,12 @@ import 'firebase/database';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyAk1HMONCD23a3wjjtfd-JRrTydSH9yaeM",
-    authDomain: "kuficlothing-e33f8.firebaseapp.com",
-    databaseURL: "https://kuficlothing-e33f8.firebaseio.com",
-    projectId: "kuficlothing-e33f8",
-    storageBucket: "kuficlothing-e33f8.appspot.com",
-    messagingSenderId: "840864825"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 };
 
 firebase.initializeApp(config);

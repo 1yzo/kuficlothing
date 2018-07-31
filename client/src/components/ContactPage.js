@@ -4,7 +4,8 @@ class ContactPage extends React.Component {
     state = {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        error: ''
     }
 
     onChange = (e) => {
@@ -18,16 +19,20 @@ class ContactPage extends React.Component {
     }
 
     onSubmit = () => {
-        fetch('api/contact', {
-            method: 'post',
-            body: JSON.stringify({ ...this.state }),
-            headers: { 'content-type': 'application/json' }
-        });
-        this.setState(() => ({
-            name: '',
-            email: '',
-            message: ''
-        }));
+        if (this.state.name && this.state.email && this.state.message) {
+            fetch('api/contact', {
+                method: 'post',
+                body: JSON.stringify({ ...this.state }),
+                headers: { 'content-type': 'application/json' }
+            });
+            this.setState(() => ({
+                name: '',
+                email: '',
+                message: ''
+            }));
+        } else {
+            this.setState(() => ({ error: 'All fields are required' }));
+        }
     }
     
     render() {
@@ -60,7 +65,8 @@ class ContactPage extends React.Component {
                         rows="10"
                         maxLength="1000"
                     />
-                    <button className="contact-form__button" onClick={this.onSubmit}>Submit</button>
+                    {this.state.error && <div className="error">{this.state.error}</div>}
+                    <button className="contact-form__button" onClick={this.onSubmit}>Send</button>
                 </div>
             </div>
         );

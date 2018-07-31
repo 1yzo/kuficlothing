@@ -21,8 +21,8 @@ router.post('/charge', (req, res, next) => {
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'spritz900@gmail.com',
-        pass: 'Osman97009700'
+        user: 'kufi.clothing.co@gmail.com',
+        pass: secrets.emailPass || process.env.EMAIL_PASS
     }
 });
 
@@ -30,8 +30,8 @@ router.post('/email', (req, res) => {
     const { customerName, orderId } = req.body;
 
     const mailOptions = {
-        from: 'spritz900@gmail.com',
-        to: 'iyzo.saab@gmail.com',
+        from: 'kufi.clothing.co@gmail.com',
+        to: 'kufi.clothing.co@gmail.com',
         subject: `New Kufi Clothing order from ${customerName}`,
         text: `View order - kuficlothing.herokuapp.com/#/admin/order/${orderId}`
     };
@@ -51,7 +51,7 @@ router.post('/contact', (req, res) => {
     
     transporter.sendMail({
         from: email,
-        to: 'iyzo.saab@gmail.com',
+        to: 'kufi.clothing.co@gmail.com',
         subject: `Kufi Clothing Message From ${name}`,
         text: message + '\n - from ' + email
     }, (error, info) => {
