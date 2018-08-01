@@ -6,7 +6,7 @@ const ProductCard = ({ name, image, price, stock }) => {
     return (
         <Link className="card-holder" to={`/products/${name}`}>
             <div className="product-card">
-                <img src={`${image}`} alt={`${name}`} />
+                <img src={image} alt={name} />
                 {(stock.small < 1 && stock.medium < 1 && stock.large < 1 && stock.xLarge < 1) &&
                     <div className="overlay overlay--stock">
                         SOLD OUT
