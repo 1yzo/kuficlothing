@@ -8,6 +8,7 @@ import { startToggleShippedStatus } from '../../actions/orders';
 class OrderCard extends React.Component {
     handleShippingClick = (e) => {
         e.stopPropagation();
+        e.preventDefault();
         
         const { id } = this.props;
         this.props.toggleShipping(id); 
