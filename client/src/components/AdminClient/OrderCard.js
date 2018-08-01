@@ -15,7 +15,7 @@ class OrderCard extends React.Component {
     }
     
     render() {
-        const { id, customerName, image, addressInfo, amount, shipped, date  } = this.props;
+        const { id, customerName, amount, shipped, date  } = this.props;
         return (
             <Link className="order-card" to={`/admin/order/${id}`}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>

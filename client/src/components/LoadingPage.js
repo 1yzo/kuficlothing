@@ -12,7 +12,6 @@ const styles = {
 const LoadingPage = () => (
     <div style={styles}>
         <div>
-            {/*<img className="loading-logo" src="/images/logo.png" alt="logo" />*/}
             <div className="lds-ripple"><div></div><div></div></div>
         </div>
     </div>

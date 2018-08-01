@@ -21,7 +21,7 @@ class LoginPage extends React.Component {
     }
 
     onSubmit = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         const { email, password } = this.state; 
         auth.signInWithEmailAndPassword(email, password)
             .then((res) => { 

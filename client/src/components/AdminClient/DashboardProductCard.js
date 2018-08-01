@@ -39,7 +39,7 @@ class DashboardProductCard extends React.Component {
     }
     
     render() {
-        const { id, image, name, views, totalSales, totalRevenue } = this.props;
+        const { image, name, views, totalSales, totalRevenue } = this.props;
         return (
             <div className="dash-product-card">
                 <img className="image-preview" src={image} alt={name} />

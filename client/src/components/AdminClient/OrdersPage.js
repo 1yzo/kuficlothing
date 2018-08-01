@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import OrderCard from './OrderCard';
-import OrderInfoPage from './OrderInfoPage';
 
 class OrdersPage extends React.Component {
     state = {

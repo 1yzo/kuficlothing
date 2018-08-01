@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import numeral from 'numeral';
-import { setAdminProduct } from '../../actions/config';
 
 class ProductsPage extends React.Component {
     state= { searchQuery: '' };

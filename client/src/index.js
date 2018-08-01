@@ -7,7 +7,7 @@ import './styles/base.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { startSetProducts, startAddProduct } from './actions/products';
+import { startSetProducts } from './actions/products';
 import LoadingPage from './components/LoadingPage';
 import database  from './firebase/firebase';
 

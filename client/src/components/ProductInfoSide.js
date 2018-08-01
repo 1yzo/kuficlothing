@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/cart';
 import '../styles/ProductInfoSide.css';
-import { access } from 'fs';
 
 class ProductInfoSide extends React.Component {
     state = {
@@ -63,7 +62,6 @@ class ProductInfoSide extends React.Component {
                         className="button-wrapper"
                         onClick={this.setSize}
                         disabled={this.props.product.stock.medium < 1}
-                        onClick={this.setSize}
                         value="medium"
                     >
                         <div

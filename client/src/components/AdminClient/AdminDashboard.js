@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DashboardProductCard from './DashboardProductCard';
 import numeral from 'numeral';
-import { setVisitorStats } from '../../actions/stats';
 
 class AdminDashboard extends React.Component {
     state = { 

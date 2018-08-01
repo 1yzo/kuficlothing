@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 export const toggleAdmin = (status) => ({
     type: 'TOGGLE_ADMIN',
     status
