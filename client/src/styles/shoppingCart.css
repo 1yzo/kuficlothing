@@ -164,7 +164,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 4rem;
-    color: #40424a;
+    color: #40424ab3;
     transition: transform 300ms ease-out;
     box-shadow: 0 2px 10px #c6b04075;
     width: 595px;

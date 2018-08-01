@@ -16,18 +16,7 @@
     justify-content: center;
     height: 300px;
     width: 225px;
-}
-
-.product-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 228px;
-    height: 303px;
-    animation: load 1s ease-in-out 1;
-    transition: transform 300ms ease-in-out;
 }
 
 @keyframes load {
@@ -39,31 +28,12 @@
     }   
 }
 
-.product-card:hover .overlay {
+.card-holder:hover .overlay {
     opacity: 100;
 }
 
-.product-card > img {
-    position: relative;
-    height: 300px;
-    width: 225px;
-    box-shadow: 0 1px 20px rgba(48, 48, 46, 0.726);
-    border-radius: 10px;
-}
-
-.product-card:after {
-    position: absolute;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.103));      
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    content: '';
-    border-radius: 10px;
-}
-
 .overlay {
-    z-index: 1;
+    z-index: 3;
     opacity: 0;
     color: white;
     position: absolute;
