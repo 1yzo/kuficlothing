@@ -37,10 +37,10 @@
     display: flex;
     justify-content: center;
     border-bottom: 2px solid #eee;
-    /* background: #c6b0409f; */
+    /* background: rgba(198,176,64,0.623); */
     /* background: #c6af40; */
-    /* background: linear-gradient(to right, #c6b0409f, #c6af40); */
-    background: linear-gradient(to right, #c6af40, #c6b0409f);
+    /* background: linear-gradient(to right, rgba(198,176,64,0.623), #c6af40); */
+    background: linear-gradient(to right, #c6af40, rgba(198,176,64,0.623));
 }
 
 .special-section__title {

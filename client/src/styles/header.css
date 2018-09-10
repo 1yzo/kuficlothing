@@ -32,7 +32,7 @@ h1 {
 .header__link {
     margin-right: 2rem;
     text-decoration: none;
-    color: #202237cb;
+    color: rgba(32,34,55,0.796);
     /* color: #202237; */
     font-weight: 700;
     user-select: none;
