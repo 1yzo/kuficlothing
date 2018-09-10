@@ -18,7 +18,7 @@
     text-decoration: none;
     margin: 0;
     font-weight: 300;
-    color: #202237cb;
+    color: rgba(32,34,55,0.796);
     margin-bottom: 3rem;
 }
 
@@ -48,7 +48,7 @@
 .price-dir {
     cursor: pointer;
     height: 20px;
-    color: #202237cb;    
+    color: rgba(32,34,55,0.796);    
     margin: 0 0.5rem;
     transition: color 200ms ease-out;
 }
